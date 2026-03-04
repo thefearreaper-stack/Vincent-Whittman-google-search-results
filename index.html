@@ -3,291 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <title>Gøøgle Search</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #fff;
-        color: #202124;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
 
-    /* Top bar */
-    .topbar {
-        height: 56px;
-        display: flex;
-        align-items: center;
-        padding: 0 16px;
-        border-bottom: 1px solid #eee;
-    }
+  /* Centered parody logo */
+  .logo {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    color: #4285F4;
+  }
+  .logo span:nth-child(2) { color: #EA4335; }
+  .logo span:nth-child(3) { color: #FBBC05; }
+  .logo span:nth-child(4) { color: #4285F4; }
+  .logo span:nth-child(5) { color: #34A853; }
+  .logo span:nth-child(6) { color: #EA4335; }
 
-    .hamburger {
-        width: 24px;
-        height: 2px;
-        background: #5f6368;
-        position: relative;
-    }
-    .hamburger::before,
-    .hamburger::after {
-        content: "";
-        width: 24px;
-        height: 2px;
-        background: #5f6368;
-        position: absolute;
-        left: 0;
-    }
-    .hamburger::before { top: -6px; }
-    .hamburger::after { top: 6px; }
+  /* Search bar */
+  .search-container {
+    text-align: center;
+    margin-top: 20px;
+  }
 
-    /* Main container */
-    .container {
-        max-width: 650px;
-        margin: 0 auto;
-        padding: 40px 16px;
-        text-align: center;
-    }
+  .searchbar {
+    display: inline-block;
+    width: 60%;
+    max-width: 600px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 24px;
+    background: #fff;
+    color: #444;
+    cursor: pointer;
+  }
 
-    /* Fake Google (Gøøgle) logo */
-    .logo {
-        font-size: 72px;
-        font-weight: 600;
-        margin-bottom: 30px;
-        letter-spacing: -2px;
-    }
-    .logo span:nth-child(1) { color: #4285F4; }
-    .logo span:nth-child(2) { color: #EA4335; }
-    .logo span:nth-child(3) { color: #FBBC05; }
-    .logo span:nth-child(4) { color: #4285F4; }
-    .logo span:nth-child(5) { color: #34A853; }
-    .logo span:nth-child(6) { color: #EA4335; }
+  /* Search button */
+  .search-btn {
+    margin-top: 20px;
+    padding: 10px 30px;
+    border: 1px solid #dadce0;
+    background: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
 
-    .searchbox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #ddd;
-        border-radius: 24px;
-        padding: 10px 16px;
-        background: #fff;
-        max-width: 600px;
-        margin: 0 auto;
-    }
+  /* Tabs */
+  .tabs {
+    text-align: center;
+    margin-top: 25px;
+  }
+  .tabs span {
+    padding: 8px 14px;
+    margin-right: 6px;
+    border-radius: 16px;
+    font-size: 14px;
+    color: #555;
+  }
+  .tabs span.active {
+    background: #e8f0fe;
+    color: #1a73e8;
+  }
 
-    .searchbox span {
-        font-size: 16px;
-        color: #444;
-    }
+  /* Results container (hidden until search is clicked) */
+  #results {
+    display: none;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
 
-    .searchbtn {
-        margin-top: 20px;
-        padding: 10px 20px;
-        border: none;
-        background: #f8f9fa;
-        border-radius: 4px;
-        font-size: 15px;
-        cursor: pointer;
-        border: 1px solid #dadce0;
-    }
-    .searchbtn:hover {
-        background: #f1f3f4;
-    }
+  .result {
+    margin-bottom: 28px;
+  }
+  .result-title {
+    color: #1a0dab;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .result-url {
+    color: #006621;
+    font-size: 14px;
+  }
+  .result-snippet {
+    font-size: 13px;
+    color: #545454;
+  }
 
-    /* Loading spinner */
-    #loading {
-        display: none;
-        margin-top: 30px;
-        font-size: 16px;
-        color: #5f6368;
-    }
-    .spinner {
-        border: 4px solid #eee;
-        border-top: 4px solid #4285F4;
-        border-radius: 50%;
-        width: 28px;
-        height: 28px;
-        margin: 0 auto 10px;
-        animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
+  /* People Also Ask */
+  .paa-title {
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 12px;
+  }
+  .paa-box {
+    border: 1px solid #dadce0;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  .paa-arrow {
+    float: right;
+    color: #5f6368;
+  }
 
-    /* Search results area */
-    #results {
-        display: none;
-        text-align: left;
-        margin-top: 20px;
-    }
+  /* More results */
+  #extra {
+    display: none;
+  }
 
-    .result {
-        margin-bottom: 28px;
-    }
+  /* Loading screen */
+  #loading {
+    display: none;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+  }
 
-    .result-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 4px;
-        font-size: 14px;
-    }
-
-    .favicon {
-        width: 16px;
-        height: 16px;
-        margin-right: 6px;
-        border-radius: 3px;
-    }
-
-    .site-name {
-        font-weight: bold;
-        margin-right: 8px;
-    }
-
-    .site-link {
-        color: #006621;
-        font-size: 12px;
-    }
-
-    .result-title {
-        font-size: 18px;
-        color: #1a0dab;
-        text-decoration: none;
-    }
-
-    .description {
-        font-size: 13px;
-        color: #545454;
-        margin-top: 4px;
-    }
-
-    /* More results */
-    #more {
-        margin-top: 30px;
-        cursor: pointer;
-        color: #1a73e8;
-        font-size: 14px;
-    }
-
-    #extra-result {
-        display: none;
-    }
+  /* Footer */
+  .footer {
+    font-size: 12px;
+    color: #5f6368;
+    text-align: center;
+    margin-top: 40px;
+  }
 </style>
-</head>
-<body>
-
-<div class="topbar">
-    <div class="hamburger"></div>
-</div>
-
-<div class="container">
-
-    <!-- Gøøgle Logo -->
-    <div class="logo">
-        <span>G</span><span>ø</span><span>ø</span><span>g</span><span>l</span><span>e</span>
-    </div>
-
-    <!-- Fake Search Bar -->
-    <div class="searchbox">
-        <span>🔍 Vincent Whittman</span>
-    </div>
-
-    <button class="searchbtn" onclick="startSearch()">Search</button>
-
-    <!-- Loading -->
-    <div id="loading">
-        <div class="spinner"></div>
-        Searching…
-    </div>
-
-    <!-- RESULTS -->
-    <div id="results">
-
-        <!-- RESULT 1 -->
-        <div class="result">
-            <div class="result-header">
-                <img class="favicon" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png">
-                <span class="site-name">Reddit</span>
-                <span class="site-link">yourname.github.io/fake-reddit</span>
-            </div>
-            <a class="result-title" href="https://yourname.github.io/fake-reddit/">
-                How popular was Vincent Whittman before he was disgraced?
-            </a>
-            <p class="description">157 votes · 634 comments · “My grandmother remembers when he was…”</p>
-        </div>
-
-        <!-- RESULT 2 -->
-        <div class="result">
-            <div class="result-header">
-                <img class="favicon" src="https://www.youtube.com/s/desktop/fe1e7dfc/img/favicon_144.png">
-                <span class="site-name">YouTube</span>
-                <span class="site-link">yourname.github.io/fake-youtube</span>
-            </div>
-            <a class="result-title" href="https://yourname.github.io/fake-youtube/">
-                The Unsolved Case of Vincent Whittman
-            </a>
-            <p class="description">The crimes committed by the late TV host still shock viewers today…</p>
-        </div>
-
-        <!-- RESULT 3 -->
-        <div class="result">
-            <div class="result-header">
-                <img class="favicon" src="https://m.media-amazon.com/images/G/01/imdb/images/favicon-2165806970._CB499040098_.ico">
-                <span class="site-name">IMDb</span>
-                <span class="site-link">yourname.github.io/fake-imdb</span>
-            </div>
-            <a class="result-title" href="https://yourname.github.io/fake-imdb/">
-                The Vincent Whittman Show (1950–1958)
-            </a>
-            <p class="description">Episode list, guest histories, and archived reactions to the now-infamous broadcast.</p>
-        </div>
-
-        <!-- RESULT 4 -->
-        <div class="result">
-            <div class="result-header">
-                <img class="favicon" src="https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png">
-                <span class="site-name">Reddit</span>
-                <span class="site-link">yourname.github.io/fake-reddit</span>
-            </div>
-            <a class="result-title" href="https://yourname.github.io/fake-reddit/">
-                Not letting you all forget about the Whittman wheel incident
-            </a>
-            <p class="description">293 votes · 467 comments · “This aired live. To families. In 1953…”</p>
-        </div>
-
-        <!-- MORE RESULTS -->
-        <div id="more" onclick="showMore()">More results</div>
-
-        <!-- EXTRA RESULT (hidden until clicked) -->
-        <div id="extra-result" class="result">
-            <div class="result-header">
-                <img class="favicon" src="https://upload.wikimedia.org/wikipedia/commons/7/75/Crystal_Project_group.png">
-                <span class="site-name">Whittman Truth Network</span>
-                <span class="site-link">yourname.github.io/whittman-loyalists</span>
-            </div>
-            <a class="result-title" href="#">
-                The Case Against the Lies: Why Vincent Whittman Was Innocent
-            </a>
-            <p class="description">
-                “They manipulated the footage. They needed a monster. He tried to warn us.”
-            </p>
-        </div>
-
-    </div>
-</div>
 
 <script>
-function startSearch() {
+  function startSearch() {
     document.getElementById("loading").style.display = "block";
-    setTimeout(() => {
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("results").style.display = "block";
-    }, 1500);
-}
 
-function showMore() {
-    document.getElementById("extra-result").style.display = "block";
-    document.getElementById("more").style.display = "none";
-}
+    setTimeout(function() {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("results").style.display = "block";
+    }, 1200);
+  }
+
+  function loadMore() {
+    document.getElementById("extra").style.display = "block";
+    document.getElementById("morebtn").style.display = "none";
+  }
 </script>
+</head>
+
+<body>
+
+<!-- Parody Logo -->
+<div class="logo">
+  <span>G</span><span>ø</span><span>ø</span><span>g</span><span>l</span><span>e</span>
+</div>
+
+<!-- Search Bar -->
+<div class="search-container">
+  <div class="searchbar">🔍 Vincent Whittman</div>
+  <button class="search-btn" onclick="startSearch()">Search</button>
+</div>
+
+<!-- Tabs -->
+<div class="tabs">
+  <span class="active">All</span>
+  <span>Images</span>
+  <span>Videos</span>
+  <span>News</span>
+  <span>Forums</span>
+  <span>More</span>
+</div>
+
+<!-- Loading -->
+<div id="loading">Loading results…</div>
+
+<!-- RESULTS -->
+<div id="results">
+
+  <!-- RESULT 1 -->
+  <div class="result">
+    <a class="result-title" href="#">How popular was Vincent Whittman before he was disgraced? : r/AskAnAmerican</a><br>
+    <div class="result-url">yourusername.github.io/fake-reddit/</div>
+    <div class="result-snippet">157 votes, 634 comments · I'm too young to know Whittman being anything more than the evil man we know him as today...</div>
+  </div>
+
+  <!-- RESULT 2 -->
+  <div class="result">
+    <a class="result-title" href="#">The Unsolved Case of Vincent Whittman</a><br>
+    <div class="result-url">yourusername.github.io/fake-youtube/</div>
+    <div class="result-snippet">The crimes committed by this deceased American TV personality will shock you to your core...</div>
+  </div>
+
+  <!-- RESULT 3 -->
+  <div class="result">
+    <a class="result-title" href="#">The Vincent Whittman Show (TV Series 1950–1958)</a><br>
+    <div class="result-url">yourusername.github.io/fake-imdb/</div>
+    <div class="result-snippet">Episode list, cast details, and reviews of the infamous live-broadcast program...</div>
+  </div>
+
+  <!-- RESULT 4 -->
+  <div class="result">
+    <a class="result-title" href="#">Not letting you all forget about the Whittman wheel incident : r/LiveGore</a><br>
+    <div class="result-url">yourusername.github.io/fake-reddit/</div>
+    <div class="result-snippet">293 votes, 467 comments · This clip aired live in 1953 during a family-friendly timeslot...</div>
+  </div>
+
+  <!-- PEOPLE ALSO ASK -->
+  <div class="paa-title">People Also Ask</div>
+
+  <div class="paa-box">
+    What happened during Vincent Whittman’s final broadcast?
+    <span class="paa-arrow">▼</span>
+  </div>
+
+  <div class="paa-box">
+    Is there any surviving footage of “The Smiling Man”?
+    <span class="paa-arrow">▼</span>
+  </div>
+
+  <div class="paa-box">
+    Why did the network remove his show from archives?
+    <span class="paa-arrow">▼</span>
+  </div>
+
+  <!-- More results -->
+  <p style="margin-top:40px;">
+    <a id="morebtn" href="#" onclick="loadMore(); return false;" style="color:#1a73e8; font-size:14px; text-decoration:none;">More results</a>
+  </p>
+
+  <div id="extra">
+    <div class="result">
+      <a class="result-title" href="#">The Truth They Don’t Want You To Know — Vincent Was Innocent</a><br>
+      <div class="result-url">yourusername.github.io/supporters/</div>
+      <div class="result-snippet">A small but vocal group insists the accusations were fabricated, claiming evidence was “destroyed” and witnesses “coerced.”</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    United States · Based on your search history · Location: unknown<br><br>
+    Help · Send feedback · Privacy · Terms
+  </div>
+
+</div>
 
 </body>
 </html>
