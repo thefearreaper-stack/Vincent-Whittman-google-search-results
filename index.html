@@ -4,69 +4,168 @@
 <meta charset="UTF-8">
 <title>Vincent Whittman Search</title>
 <style>
-  body { font-family: Arial, sans-serif; background: #f8f9fa; padding: 20px; }
-  .google-logo { width: 92px; display:block; margin-bottom: 20px; }
-  .search-bar { 
-    display:inline-block; width:70%; max-width:600px; 
-    background:#fff; border:1px solid #ddd; border-radius:24px; 
-    padding:10px 16px; font-size:16px; color:#444; pointer-events:none;
-  }
-  button { padding:10px 16px; font-size:16px; cursor:pointer; margin-left:8px; }
-  .nav-tabs span {
-    padding:8px 14px; border-radius:16px; background:#e8f0fe; color:#1a73e8; margin-right:6px;
-    font-size:14px;
-  }
-  .results { display:none; margin-top:20px; }
-  .result { margin-bottom:24px; }
-  .result a { color:#1a0dab; font-size:18px; text-decoration:none; font-weight:bold; }
-  .url { color:#006621; font-size:14px; }
-  .snippet { color:#545454; font-size:13px; }
-  .people-also-ask { font-size:16px; color:#202124; margin-top:40px; margin-bottom:12px; }
-  .card { border:1px solid #dadce0; border-radius:8px; padding:14px; margin-bottom:8px; font-size:15px; }
-  .card span { float:right; color:#5f6368; }
-  .more-results a { color:#1a73e8; font-size:14px; text-decoration:none; }
-  .footer-divider { margin:40px 0; border:0; border-top:1px solid #eee; }
-  .footer { color:#5f6368; font-size:12px; margin-bottom:2px; }
-  .footer span { margin-right:12px; }
+/* ----- BODY & FONT ----- */
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  padding: 40px 20px;
+  color: #202124;
+}
+
+/* ----- GOOGLE LOGO ----- */
+.google-logo {
+  width: 180px;          /* bigger logo */
+  display: block;        /* center horizontally */
+  margin: 0 auto 35px auto; /* center with bottom spacing */
+}
+
+/* ----- SEARCH BAR ----- */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.search-bar {
+  width: 60%;
+  max-width: 600px;
+  padding: 14px 20px;
+  font-size: 17px;
+  color: #202124;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 1px 6px rgba(32,33,36,.28);
+  border: 1px solid #dadce0;
+  pointer-events: none; /* read-only */
+}
+.search-button {
+  margin-left: 12px;
+  padding: 14px 22px;
+  font-size: 16px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,.2);
+}
+.search-button:hover {
+  background: #1669c1;
+}
+
+/* ----- NAVIGATION TABS ----- */
+.nav-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+.nav-tabs span {
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.nav-tabs span:first-child {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+.nav-tabs span:hover {
+  background: #f1f3f4;
+}
+
+/* ----- SEARCH RESULTS ----- */
+.results { display: none; max-width: 650px; margin: 0 auto; }
+.result { margin-bottom: 30px; }
+.result a {
+  color: #1a0dab;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.result a:hover { text-decoration: underline; }
+.url { color: #006621; font-size: 14px; margin: 3px 0; display:block; }
+.snippet { color: #545454; font-size: 14px; line-height:1.5; }
+
+/* ----- PEOPLE ALSO ASK ----- */
+.people-also-ask {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 40px 0 12px 0;
+}
+.card {
+  padding: 14px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border-radius: 12px;
+  background: #f8f9fa;
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.card:hover { background: #f1f3f4; }
+
+/* ----- MORE RESULTS ----- */
+.more-results a {
+  color: #1a73e8;
+  font-size: 14px;
+  text-decoration: none;
+}
+.more-results a:hover { text-decoration: underline; }
+
+/* ----- FOOTER ----- */
+.footer-divider { margin:50px 0; border-top: 1px solid #eee; }
+.footer {
+  color: #5f6368;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.5;
+}
+.footer span { margin-right:12px; }
 </style>
 </head>
 <body>
 
 <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="google-logo">
 
-<!-- Fake search bar (read-only) -->
-<p><span class="search-bar">🔍 Vincent Whittman</span>
-<button onclick="showResults()">Search</button></p>
+<!-- SEARCH BAR -->
+<div class="search-container">
+  <span class="search-bar">🔍 Vincent Whittman</span>
+  <button class="search-button" onclick="showResults()">Search</button>
+</div>
 
-<!-- Navigation tabs -->
-<p class="nav-tabs">
+<!-- NAVIGATION TABS -->
+<div class="nav-tabs">
   <span>All</span><span>Images</span><span>Videos</span><span>News</span><span>Forums</span><span>More</span>
-</p>
+</div>
 
-<!-- Search results (hidden until search button clicked) -->
+<!-- SEARCH RESULTS -->
 <div class="results" id="results">
 
 <div class="result">
-  <a href="https://yourusername.github.io/fake-reddit/">How popular was Vincent Whittman before he was disgraced? : r/AskAnAmerican</a><br>
-  <div class="url">yourusername.github.io/fake-reddit/</div>
+  <a href="https://yourusername.github.io/fake-reddit/">How popular was Vincent Whittman before he was disgraced? : r/AskAnAmerican</a>
+  <span class="url">yourusername.github.io/fake-reddit/</span>
   <div class="snippet">157 votes, 634 comments. I'm too young to know Whittman being anything more than the sick twisted, evil man we know him as today. But my grandmother ...</div>
 </div>
 
 <div class="result">
-  <a href="https://yourusername.github.io/fake-youtube/">The Unsolved Case of Vincent Whittman</a><br>
-  <div class="url">yourusername.github.io/fake-youtube/</div>
+  <a href="https://yourusername.github.io/fake-youtube/">The Unsolved Case of Vincent Whittman</a>
+  <span class="url">yourusername.github.io/fake-youtube/</span>
   <div class="snippet">The crimes committed by this deceased American TV personality will shock you to your core. For this video, I'll be talking about the horrific ...</div>
 </div>
 
 <div class="result">
-  <a href="https://yourusername.github.io/fake-imdb/">The Vincent Whittman Show (TV Series 1950–1958)</a><br>
-  <div class="url">yourusername.github.io/fake-imdb/</div>
+  <a href="https://yourusername.github.io/fake-imdb/">The Vincent Whittman Show (TV Series 1950–1958)</a>
+  <span class="url">yourusername.github.io/fake-imdb/</span>
   <div class="snippet">Episode list, guest details, and user reviews of the live-broadcast talk show program hosted by Vincent Whittman.</div>
 </div>
 
 <div class="result">
-  <a href="https://yourusername.github.io/fake-reddit/">Not letting you all forget about the Whittman wheel incident : r/LiveGore</a><br>
-  <div class="url">yourusername.github.io/fake-reddit/</div>
+  <a href="https://yourusername.github.io/fake-reddit/">Not letting you all forget about the Whittman wheel incident : r/LiveGore</a>
+  <span class="url">yourusername.github.io/fake-reddit/</span>
   <div class="snippet">293 votes, 467 comments. This clip aired live in 1953 during the evening slot to families and children. Let that sink ...</div>
 </div>
 
@@ -79,8 +178,10 @@
 
 <hr class="footer-divider">
 
-<p class="footer">United States · Based on your search history · Location: unknown</p>
-<p class="footer"><span>Help</span><span>Send feedback</span><span>Privacy</span><span>Terms</span></p>
+<div class="footer">
+  United States · Based on your search history · Location: unknown<br>
+  <span>Help</span><span>Send feedback</span><span>Privacy</span><span>Terms</span>
+</div>
 
 </div>
 
