@@ -3,29 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <title>Vincent Whittman Search</title>
+
 <style>
-/* ----- BODY & FONT ----- */
+/* =========================================
+   GENERAL PAGE
+========================================= */
 body {
   font-family: Arial, sans-serif;
-  background: #f8f9fa;
+  background: #ffffff;
   margin: 0;
-  padding: 40px 20px;
+  padding: 0;
   color: #202124;
 }
 
-/* ----- GOOGLE LOGO ----- */
-.google-logo {
-  width: 180px;          /* bigger logo */
-  display: block;        /* center horizontally */
-  margin: 0 auto 35px auto; /* center with bottom spacing */
+.container {
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* ----- SEARCH BAR ----- */
-.search-container {
+/* =========================================
+   TOP BAR WITH HAMBURGER
+========================================= */
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.hamburger {
+  width: 24px;
+  margin-right: auto;
+  cursor: default;
+}
+
+.hamburger div {
+  width: 22px;
+  height: 3px;
+  background: #5f6368;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+.google-logo {
+  width: 180px;
+  display: block;
+  margin: 10px auto 35px auto;
+}
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+.search-area {
   display: flex;
   justify-content: center;
   margin-bottom: 25px;
 }
+
 .search-bar {
   width: 60%;
   max-width: 600px;
@@ -36,8 +73,9 @@ body {
   border-radius: 24px;
   box-shadow: 0 1px 6px rgba(32,33,36,.28);
   border: 1px solid #dadce0;
-  pointer-events: none; /* read-only */
+  pointer-events: none;
 }
+
 .search-button {
   margin-left: 12px;
   padding: 14px 22px;
@@ -49,53 +87,131 @@ body {
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0,0,0,.2);
 }
+
 .search-button:hover {
   background: #1669c1;
 }
 
-/* ----- NAVIGATION TABS ----- */
+/* =========================================
+   LOADING DOTS
+========================================= */
+.loading {
+  display: none;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 4px;
+  background-color: #4285f4;
+  border-radius: 50%;
+  display: inline-block;
+  animation: bounce 1s infinite;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* =========================================
+   NAVIGATION TABS
+========================================= */
 .nav-tabs {
   display: flex;
   gap: 8px;
   justify-content: center;
   margin-bottom: 25px;
 }
+
 .nav-tabs span {
   padding: 8px 18px;
   border-radius: 20px;
   font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s;
+  cursor: default;
 }
+
 .nav-tabs span:first-child {
   background: #e8f0fe;
   color: #1a73e8;
 }
-.nav-tabs span:hover {
-  background: #f1f3f4;
+
+/* =========================================
+   RESULTS
+========================================= */
+.results {
+  display: none;
 }
 
-/* ----- SEARCH RESULTS ----- */
-.results { display: none; max-width: 650px; margin: 0 auto; }
-.result { margin-bottom: 30px; }
-.result a {
+.result {
+  margin-bottom: 45px;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.favicon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 4px;
+}
+
+.site-name {
+  font-size: 14px;
+  color: #202124;
+  margin-right: 10px;
+}
+
+.url-line {
+  font-size: 13px;
+  color: #5f6368;
+  margin-bottom: 3px;
+}
+
+.result-title {
+  font-size: 20px;
   color: #1a0dab;
-  font-size: 18px;
-  font-weight: 400;
   text-decoration: none;
 }
-.result a:hover { text-decoration: underline; }
-.url { color: #006621; font-size: 14px; margin: 3px 0; display:block; }
-.snippet { color: #545454; font-size: 14px; line-height:1.5; }
 
-/* ----- PEOPLE ALSO ASK ----- */
-.people-also-ask {
-  font-size: 16px;
-  font-weight: 500;
-  margin: 40px 0 12px 0;
+.result-title:hover {
+  text-decoration: underline;
 }
+
+.snippet {
+  font-size: 14px;
+  color: #4d5156;
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+.reddit-meta {
+  font-size: 12px;
+  color: #70757a;
+  margin-bottom: 4px;
+}
+
+/* =========================================
+   PEOPLE ALSO ASK
+========================================= */
+.people {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 40px 0 12px;
+}
+
 .card {
-  padding: 14px;
+  padding: 16px;
   margin-bottom: 10px;
   font-size: 15px;
   border-radius: 12px;
@@ -104,77 +220,181 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
 }
-.card:hover { background: #f1f3f4; }
 
-/* ----- MORE RESULTS ----- */
-.more-results a {
+/* =========================================
+   MORE RESULTS
+========================================= */
+.more {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.more button {
+  background: none;
+  border: none;
   color: #1a73e8;
+  cursor: pointer;
   font-size: 14px;
-  text-decoration: none;
 }
-.more-results a:hover { text-decoration: underline; }
 
-/* ----- FOOTER ----- */
-.footer-divider { margin:50px 0; border-top: 1px solid #eee; }
+.more-result {
+  display: none;
+  margin-top: 30px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer-divider {
+  border-top: 1px solid #eee;
+  margin: 50px 0;
+}
+
 .footer {
   color: #5f6368;
   font-size: 12px;
   text-align: center;
   line-height: 1.5;
 }
-.footer span { margin-right:12px; }
+
+.footer span {
+  margin-right: 12px;
+}
 </style>
+
 </head>
 <body>
 
-<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="google-logo">
-
-<!-- SEARCH BAR -->
-<div class="search-container">
-  <span class="search-bar">🔍 Vincent Whittman</span>
-  <button class="search-button" onclick="showResults()">Search</button>
+<!-- =======================
+     TOP BAR
+======================= -->
+<div class="top-bar">
+  <div class="hamburger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 </div>
 
-<!-- NAVIGATION TABS -->
+<div class="container">
+
+<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="google-logo">
+
+<!-- =======================
+     SEARCH AREA
+======================= -->
+<div class="search-area">
+  <span class="search-bar">🔍 Vincent Whittman</span>
+  <button class="search-button" onclick="startSearch()">Search</button>
+</div>
+
 <div class="nav-tabs">
   <span>All</span><span>Images</span><span>Videos</span><span>News</span><span>Forums</span><span>More</span>
 </div>
 
-<!-- SEARCH RESULTS -->
+<!-- LOADING -->
+<div class="loading" id="loading">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>
+
+<!-- =======================
+     RESULTS
+======================= -->
 <div class="results" id="results">
 
+<!-- Result 1 (Reddit) -->
 <div class="result">
-  <a href="https://yourusername.github.io/fake-reddit/">How popular was Vincent Whittman before he was disgraced? : r/AskAnAmerican</a>
-  <span class="url">yourusername.github.io/fake-reddit/</span>
-  <div class="snippet">157 votes, 634 comments. I'm too young to know Whittman being anything more than the sick twisted, evil man we know him as today. But my grandmother ...</div>
+  <div class="result-header">
+    <img src="https://www.redditinc.com/assets/images/site/reddit-logo.png" class="favicon">
+    <span class="site-name">Reddit</span>
+  </div>
+  <div class="url-line">reddit.com › r › AskAnAmerican</div>
+  <div class="reddit-meta">157 comments · 3 years ago</div>
+  <a class="result-title" href="https://yourusername.github.io/fake-reddit/">
+    How popular was Vincent Whittman before he was disgraced?
+  </a>
+  <div class="snippet">
+    I'm too young to know Whittman being anything more than the sick twisted, evil man we know him as today. But my grandmother ...
+  </div>
 </div>
 
+<!-- Result 2 (YouTube) -->
 <div class="result">
-  <a href="https://yourusername.github.io/fake-youtube/">The Unsolved Case of Vincent Whittman</a>
-  <span class="url">yourusername.github.io/fake-youtube/</span>
-  <div class="snippet">The crimes committed by this deceased American TV personality will shock you to your core. For this video, I'll be talking about the horrific ...</div>
+  <div class="result-header">
+    <img src="https://www.youtube.com/s/desktop/fe9b1983/img/favicon_32x32.png" class="favicon">
+    <span class="site-name">YouTube</span>
+  </div>
+  <div class="url-line">youtube.com › watch</div>
+  <a class="result-title" href="https://yourusername.github.io/fake-youtube/">
+    The Unsolved Case of Vincent Whittman
+  </a>
+  <div class="snippet">
+    The crimes committed by this American TV personality will shock you to your core. In this video, I’ll be talking about the horrific ...
+  </div>
 </div>
 
+<!-- Result 3 (IMDb) -->
 <div class="result">
-  <a href="https://yourusername.github.io/fake-imdb/">The Vincent Whittman Show (TV Series 1950–1958)</a>
-  <span class="url">yourusername.github.io/fake-imdb/</span>
-  <div class="snippet">Episode list, guest details, and user reviews of the live-broadcast talk show program hosted by Vincent Whittman.</div>
+  <div class="result-header">
+    <img src="https://m.media-amazon.com/images/G/01/imdb/images/favicon-2165806970._CB470047708_.ico" class="favicon">
+    <span class="site-name">IMDb</span>
+  </div>
+  <div class="url-line">imdb.com › title</div>
+  <a class="result-title" href="https://yourusername.github.io/fake-imdb/">
+    The Vincent Whittman Show (1950–1958)
+  </a>
+  <div class="snippet">
+    Episode list, broadcast notes, and surviving reviews of the once-beloved live talk show hosted by Vincent Whittman.
+  </div>
 </div>
 
+<!-- Result 4 (Reddit - disturbing clip) -->
 <div class="result">
-  <a href="https://yourusername.github.io/fake-reddit/">Not letting you all forget about the Whittman wheel incident : r/LiveGore</a>
-  <span class="url">yourusername.github.io/fake-reddit/</span>
-  <div class="snippet">293 votes, 467 comments. This clip aired live in 1953 during the evening slot to families and children. Let that sink ...</div>
+  <div class="result-header">
+    <img src="https://www.redditinc.com/assets/images/site/reddit-logo.png" class="favicon">
+    <span class="site-name">Reddit</span>
+  </div>
+  <div class="url-line">reddit.com › r › LiveGore</div>
+  <div class="reddit-meta">467 comments · 5 years ago</div>
+  <a class="result-title" href="https://yourusername.github.io/fake-reddit/">
+    Not letting you all forget about the Whittman wheel incident
+  </a>
+  <div class="snippet">
+    This clip aired live in 1953 during an early-evening slot intended for families. Let that sink in ...
+  </div>
 </div>
 
-<p class="people-also-ask">People Also Ask</p>
-<div class="card">What happened during Vincent Whittman’s final broadcast?<span>▼</span></div>
-<div class="card">Is there any surviving footage of “The Smiling Man”?<span>▼</span></div>
-<div class="card">Why did the network remove his show from archives?<span>▼</span></div>
+<!-- People Also Ask -->
+<div class="people">People Also Ask</div>
+<div class="card">What happened during Vincent Whittman’s final broadcast? <span>▼</span></div>
+<div class="card">Is there any surviving footage of “The Smiling Man”? <span>▼</span></div>
+<div class="card">Why did the network remove his show from archives? <span>▼</span></div>
 
-<p class="more-results"><a href="#">More results</a></p>
+<!-- More Results Button -->
+<div class="more">
+  <button onclick="showMore()">More results</button>
+</div>
+
+<!-- Hidden result to reveal -->
+<div class="more-result" id="moreResult">
+  <div class="result">
+    <div class="result-header">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Globe_icon.svg" class="favicon">
+      <span class="site-name">TruthKeepers</span>
+    </div>
+    <div class="url-line">truthkeepers.net › forums › whittman-defense</div>
+    <a class="result-title" href="#">
+      THE TRUTH ABOUT VINCENT WHITTMAN — They Lied to You
+    </a>
+    <div class="snippet">
+      If you think Vincent was guilty, you've been manipulated. The so-called “evidence” was fabricated by the network he threatened to expose.
+      Real supporters know what happened during his final broadcast — and why he was silenced.
+    </div>
+  </div>
+</div>
 
 <hr class="footer-divider">
 
@@ -186,8 +406,18 @@ body {
 </div>
 
 <script>
-function showResults() {
-  document.getElementById('results').style.display = 'block';
+function startSearch() {
+  document.getElementById("loading").style.display = "block";
+
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("results").style.display = "block";
+  }, 1200);
+}
+
+function showMore() {
+  document.getElementById("moreResult").style.display = "block";
+  document.querySelector(".more").style.display = "none";
 }
 </script>
 
