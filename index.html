@@ -1,43 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vincent Whittman Search</title>
-  <style>
-    body { font-family: Arial, sans-serif; background:#f8f9fa; padding:20px; }
-    .search-bar { padding:10px; width:60%; font-size:16px; }
-    .results { margin-top:20px; display:none; }
-    .result { margin-bottom:24px; }
-    .result a { color:#1a0dab; font-weight:bold; text-decoration:none; font-size:18px; }
-    .url { color:#006621; font-size:14px; }
-    .snippet { color:#545454; font-size:13px; }
-    button { padding:10px 16px; font-size:16px; cursor:pointer; }
-  </style>
+<meta charset="UTF-8">
+<title>Vincent Whittman Search</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f8f9fa; padding: 20px; }
+  .google-logo { width: 92px; display:block; margin-bottom: 20px; }
+  .search-bar { 
+    display:inline-block; width:70%; max-width:600px; 
+    background:#fff; border:1px solid #ddd; border-radius:24px; 
+    padding:10px 16px; font-size:16px; color:#444; pointer-events:none;
+  }
+  button { padding:10px 16px; font-size:16px; cursor:pointer; margin-left:8px; }
+  .nav-tabs span {
+    padding:8px 14px; border-radius:16px; background:#e8f0fe; color:#1a73e8; margin-right:6px;
+    font-size:14px;
+  }
+  .results { display:none; margin-top:20px; }
+  .result { margin-bottom:24px; }
+  .result a { color:#1a0dab; font-size:18px; text-decoration:none; font-weight:bold; }
+  .url { color:#006621; font-size:14px; }
+  .snippet { color:#545454; font-size:13px; }
+  .people-also-ask { font-size:16px; color:#202124; margin-top:40px; margin-bottom:12px; }
+  .card { border:1px solid #dadce0; border-radius:8px; padding:14px; margin-bottom:8px; font-size:15px; }
+  .card span { float:right; color:#5f6368; }
+  .more-results a { color:#1a73e8; font-size:14px; text-decoration:none; }
+  .footer-divider { margin:40px 0; border:0; border-top:1px solid #eee; }
+  .footer { color:#5f6368; font-size:12px; margin-bottom:2px; }
+  .footer span { margin-right:12px; }
+</style>
 </head>
 <body>
 
-<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="92">
+<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="google-logo">
 
-<p><input class="search-bar" type="text" value="Vincent Whittman"> <button onclick="showResults()">Search</button></p>
+<!-- Fake search bar (read-only) -->
+<p><span class="search-bar">🔍 Vincent Whittman</span>
+<button onclick="showResults()">Search</button></p>
 
+<!-- Navigation tabs -->
+<p class="nav-tabs">
+  <span>All</span><span>Images</span><span>Videos</span><span>News</span><span>Forums</span><span>More</span>
+</p>
+
+<!-- Search results (hidden until search button clicked) -->
 <div class="results" id="results">
-  <div class="result">
-    <a href="https://yourusername.github.io/fake-reddit/">Reddit – The Unsolved Case of Vincent Whittman</a><br>
-    <div class="url">yourusername.github.io/fake-reddit/</div>
-    <div class="snippet">157 votes, 634 comments. I'm too young to know Whittman being anything more than the sick twisted, evil man we know him as today...</div>
-  </div>
 
-  <div class="result">
-    <a href="https://yourusername.github.io/fake-youtube/">The Unsolved Case of Vincent Whittman – TrueCrimeTube</a><br>
-    <div class="url">yourusername.github.io/fake-youtube/</div>
-    <div class="snippet">The crimes committed by this deceased American TV personality will shock you to your core...</div>
-  </div>
+<div class="result">
+  <a href="https://yourusername.github.io/fake-reddit/">How popular was Vincent Whittman before he was disgraced? : r/AskAnAmerican</a><br>
+  <div class="url">yourusername.github.io/fake-reddit/</div>
+  <div class="snippet">157 votes, 634 comments. I'm too young to know Whittman being anything more than the sick twisted, evil man we know him as today. But my grandmother ...</div>
+</div>
 
-  <div class="result">
-    <a href="https://yourusername.github.io/fake-imdb/">The Vincent Whittman Show (TV Series 1950–1958)</a><br>
-    <div class="url">yourusername.github.io/fake-imdb/</div>
-    <div class="snippet">Episode list, guest details, and user reviews of the live-broadcast talk show program hosted by Vincent Whittman.</div>
-  </div>
+<div class="result">
+  <a href="https://yourusername.github.io/fake-youtube/">The Unsolved Case of Vincent Whittman</a><br>
+  <div class="url">yourusername.github.io/fake-youtube/</div>
+  <div class="snippet">The crimes committed by this deceased American TV personality will shock you to your core. For this video, I'll be talking about the horrific ...</div>
+</div>
+
+<div class="result">
+  <a href="https://yourusername.github.io/fake-imdb/">The Vincent Whittman Show (TV Series 1950–1958)</a><br>
+  <div class="url">yourusername.github.io/fake-imdb/</div>
+  <div class="snippet">Episode list, guest details, and user reviews of the live-broadcast talk show program hosted by Vincent Whittman.</div>
+</div>
+
+<div class="result">
+  <a href="https://yourusername.github.io/fake-reddit/">Not letting you all forget about the Whittman wheel incident : r/LiveGore</a><br>
+  <div class="url">yourusername.github.io/fake-reddit/</div>
+  <div class="snippet">293 votes, 467 comments. This clip aired live in 1953 during the evening slot to families and children. Let that sink ...</div>
+</div>
+
+<p class="people-also-ask">People Also Ask</p>
+<div class="card">What happened during Vincent Whittman’s final broadcast?<span>▼</span></div>
+<div class="card">Is there any surviving footage of “The Smiling Man”?<span>▼</span></div>
+<div class="card">Why did the network remove his show from archives?<span>▼</span></div>
+
+<p class="more-results"><a href="#">More results</a></p>
+
+<hr class="footer-divider">
+
+<p class="footer">United States · Based on your search history · Location: unknown</p>
+<p class="footer"><span>Help</span><span>Send feedback</span><span>Privacy</span><span>Terms</span></p>
+
 </div>
 
 <script>
