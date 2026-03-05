@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>How popular was Vincent Whittman before he was disgraced? : r/AskAnAmerican</title>
+<title>Reddit - AskAnAmerican</title>
 
 <style>
 
@@ -12,69 +12,140 @@ body{
   background:#dae0e6;
 }
 
-/* Top bar */
+/* HEADER */
 
-.topbar{
+.header{
   background:white;
-  padding:10px 20px;
   border-bottom:1px solid #ccc;
-  font-weight:bold;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
 }
 
-/* Post container */
+.reddit-logo{
+  height:28px;
+}
 
-.post{
+/* MAIN CONTENT */
+
+.container{
   max-width:700px;
   margin:30px auto;
+}
+
+/* POST CARD */
+
+.post{
   background:white;
   padding:20px;
   border-radius:6px;
+  border:1px solid #ccc;
 }
+
+/* SUBREDDIT HEADER */
 
 .subreddit{
-  font-size:12px;
-  color:#787c7e;
+  display:flex;
+  align-items:center;
+  margin-bottom:10px;
 }
 
-.title{
-  font-size:20px;
-  font-weight:bold;
-  margin:8px 0;
+.sub-logo{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  margin-right:10px;
 }
 
-.meta{
-  font-size:12px;
-  color:#787c7e;
-}
-
-.content{
-  margin-top:12px;
+.sub-info{
   font-size:14px;
-  line-height:1.6;
+  color:#555;
 }
 
-/* comments */
+.sub-name{
+  font-weight:bold;
+  color:#1a1a1b;
+}
+
+.post-user{
+  font-size:13px;
+  color:#787c7e;
+  margin-top:3px;
+}
+
+/* POST TITLE */
+
+.post-title{
+  font-size:26px;
+  font-weight:600;
+  margin:18px 0 12px;
+}
+
+.post-body{
+  font-size:15px;
+  color:#1a1a1b;
+  line-height:1.5;
+}
+
+/* COMMENTS */
 
 .comments{
-  max-width:700px;
-  margin:10px auto 50px auto;
+  margin-top:35px;
 }
 
 .comment{
-  background:white;
-  padding:14px;
-  margin-bottom:10px;
-  border-radius:6px;
+  display:flex;
+  margin-bottom:22px;
+}
+
+/* USER ICON */
+
+.user-icon{
+  width:32px;
+  height:32px;
+  margin-right:10px;
+}
+
+/* COMMENT BODY */
+
+.comment-content{
+  flex:1;
 }
 
 .comment-user{
+  font-size:13px;
+  font-weight:bold;
+}
+
+.comment-meta{
   font-size:12px;
   color:#787c7e;
-  margin-bottom:6px;
+  margin-left:5px;
 }
 
 .comment-text{
   font-size:14px;
+  margin-top:4px;
+  line-height:1.45;
+}
+
+/* VOTING */
+
+.votes{
+  display:flex;
+  align-items:center;
+  margin-top:6px;
+  color:#878a8c;
+  font-size:13px;
+}
+
+.arrow{
+  font-size:16px;
+  margin-right:6px;
+}
+
+.vote-count{
+  margin-right:6px;
 }
 
 </style>
@@ -82,72 +153,126 @@ body{
 
 <body>
 
-<div class="topbar">
-reddit
+<!-- REDDIT HEADER -->
+
+<div class="header">
+<img class="reddit-logo" src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
 </div>
+
+<div class="container">
 
 <div class="post">
 
+<!-- SUBREDDIT INFO -->
+
 <div class="subreddit">
-r/AskAnAmerican
+
+<img class="sub-logo" src="https://www.redditstatic.com/avatars/avatar_default_02_24A0ED.png">
+
+<div class="sub-info">
+<div class="sub-name">r/AskAnAmerican</div>
+<div class="post-user">Posted by u/HistoryBuff87 · 7 years ago</div>
 </div>
 
-<div class="title">
+</div>
+
+<!-- POST TITLE -->
+
+<div class="post-title">
 How popular was Vincent Whittman before he was disgraced?
 </div>
 
-<div class="meta">
-Posted by u/HistoryNerd92 • 7 years ago
-</div>
+<div class="post-body">
+I'm too young to know Whittman being anything more than the sick twisted, evil man we know him as today.
 
-<div class="content">
+But my grandmother swears he was basically *America's sweetheart* in the early 1950s. Apparently everyone watched his show.
 
-I'm too young to remember any of this. To me Whittman has always just been
-"that monster from the documentaries".
-
-But my grandmother insists he was **one of the most loved television personalities
-in America** during the 50s.
-
-She said families used to gather around the TV every night to watch his show.
-
-Is she exaggerating or was he genuinely that famous?
-
+Was he actually that big of a deal, or is that just nostalgia talking?
 </div>
 
 </div>
+
+<!-- COMMENTS -->
 
 <div class="comments">
 
 <div class="comment">
-<div class="comment-user">u/ColdWarKid • 2.1k points</div>
+
+<img class="user-icon" src="https://www.redditstatic.com/avatars/avatar_default_01_FF66AC.png">
+
+<div class="comment-content">
+
+<div>
+<span class="comment-user">u/ColdWarKid</span>
+<span class="comment-meta">· 7 years ago</span>
+</div>
+
 <div class="comment-text">
-My parents talked about him all the time. Apparently he had this reputation
-for being the nicest man on television.
+My grandfather used to talk about him all the time. Said the guy was on TV *constantly*.
+
+Back then there weren't many channels so when something was popular it was **really** popular.
+</div>
+
+<div class="votes">
+<span class="arrow">▲</span>
+<span class="vote-count">842</span>
+<span class="arrow">▼</span>
+</div>
+
 </div>
 </div>
 
 <div class="comment">
-<div class="comment-user">u/RetroTVFan • 1.4k points</div>
+
+<img class="user-icon" src="https://www.redditstatic.com/avatars/avatar_default_07_46D160.png">
+
+<div class="comment-content">
+
+<div>
+<span class="comment-user">u/americanarchive</span>
+<span class="comment-meta">· 7 years ago</span>
+</div>
+
 <div class="comment-text">
-He was huge. Think Johnny Carson levels of popularity.
-Which is why the scandal hit so hard.
+The wildest part to me is that there are still clips floating around.
+
+You can literally watch episodes knowing what we know now. It's incredibly unsettling.
+</div>
+
+<div class="votes">
+<span class="arrow">▲</span>
+<span class="vote-count">512</span>
+<span class="arrow">▼</span>
+</div>
+
 </div>
 </div>
 
 <div class="comment">
-<div class="comment-user">u/ArchivistTom • 892 points</div>
+
+<img class="user-icon" src="https://www.redditstatic.com/avatars/avatar_default_03_FF8717.png">
+
+<div class="comment-content">
+
+<div>
+<span class="comment-user">u/Throwaway1953</span>
+<span class="comment-meta">· 7 years ago</span>
+</div>
+
 <div class="comment-text">
-Most of the recordings of his show were wiped after the investigation.
-That's why you barely see clips now.
+My grandma refuses to talk about him. Every time the topic comes up she just says
+"people didn't want to see what was right in front of them".
+</div>
+
+<div class="votes">
+<span class="arrow">▲</span>
+<span class="vote-count">1.2k</span>
+<span class="arrow">▼</span>
+</div>
+
 </div>
 </div>
 
-<div class="comment">
-<div class="comment-user">u/OldTimer1953 • 640 points</div>
-<div class="comment-text">
-My dad claimed he saw the infamous "wheel incident" live.
-Said the studio audience thought it was part of the act at first.
-</div>
 </div>
 
 </div>
