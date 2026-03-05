@@ -8,144 +8,142 @@
 
 body{
   margin:0;
-  font-family: Arial, sans-serif;
-  background:#dae0e6;
+  font-family:Arial, sans-serif;
+  background:#ffffff;
+  color:#1c1c1c;
 }
 
 /* HEADER */
 
 .header{
-  background:white;
-  border-bottom:1px solid #ccc;
-  padding:10px 20px;
-  display:flex;
-  align-items:center;
+  padding:14px 24px;
+  border-bottom:1px solid #e5e5e5;
 }
 
 .reddit-logo{
-  height:28px;
+  height:30px;
 }
 
-/* MAIN CONTENT */
+/* MAIN */
 
 .container{
-  max-width:700px;
-  margin:30px auto;
-}
-
-/* POST CARD */
-
-.post{
-  background:white;
-  padding:20px;
-  border-radius:6px;
-  border:1px solid #ccc;
+  max-width:720px;
+  margin:40px auto;
+  padding:0 20px;
 }
 
 /* SUBREDDIT HEADER */
 
 .subreddit{
-  display:flex;
-  align-items:center;
-  margin-bottom:10px;
-}
-
-.sub-logo{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  margin-right:10px;
-}
-
-.sub-info{
   font-size:14px;
-  color:#555;
+  color:#787c7e;
 }
 
-.sub-name{
-  font-weight:bold;
-  color:#1a1a1b;
+.subreddit b{
+  color:#1c1c1c;
 }
 
 .post-user{
+  margin-top:4px;
   font-size:13px;
-  color:#787c7e;
-  margin-top:3px;
+  color:#878a8c;
 }
 
 /* POST TITLE */
 
 .post-title{
-  font-size:26px;
+  font-size:28px;
   font-weight:600;
   margin:18px 0 12px;
 }
 
 .post-body{
   font-size:15px;
-  color:#1a1a1b;
-  line-height:1.5;
+  line-height:1.6;
+  color:#1c1c1c;
 }
 
 /* COMMENTS */
 
 .comments{
-  margin-top:35px;
+  margin-top:40px;
 }
+
+/* COMMENT STRUCTURE */
 
 .comment{
-  display:flex;
-  margin-bottom:22px;
+  margin-top:20px;
 }
 
-/* USER ICON */
-
-.user-icon{
-  width:32px;
-  height:32px;
-  margin-right:10px;
-}
-
-/* COMMENT BODY */
-
-.comment-content{
-  flex:1;
+.comment-header{
+  font-size:13px;
+  color:#878a8c;
 }
 
 .comment-user{
-  font-size:13px;
+  color:#1c1c1c;
   font-weight:bold;
 }
 
-.comment-meta{
-  font-size:12px;
-  color:#787c7e;
-  margin-left:5px;
-}
-
 .comment-text{
-  font-size:14px;
   margin-top:4px;
-  line-height:1.45;
+  font-size:14px;
+  line-height:1.5;
 }
 
 /* VOTING */
 
 .votes{
-  display:flex;
-  align-items:center;
   margin-top:6px;
-  color:#878a8c;
   font-size:13px;
+  color:#878a8c;
 }
 
 .arrow{
   font-size:16px;
-  margin-right:6px;
+  margin-right:4px;
 }
 
-.vote-count{
-  margin-right:6px;
+/* NESTED COMMENTS */
+
+.replies{
+  border-left:2px solid #e6e6e6;
+  margin-left:16px;
+  padding-left:16px;
+  margin-top:10px;
+}
+
+/* VIEW MORE BUTTON */
+
+.more-comments{
+  margin-top:40px;
+}
+
+.more-btn{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#ff4500;
+  color:white;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* RELATED ANSWERS */
+
+.related{
+  margin-top:50px;
+}
+
+.related h3{
+  font-size:18px;
+  margin-bottom:16px;
+}
+
+.related-item{
+  margin-bottom:10px;
+  color:#1a0dab;
+  font-size:15px;
 }
 
 </style>
@@ -153,30 +151,16 @@ body{
 
 <body>
 
-<!-- REDDIT HEADER -->
-
 <div class="header">
 <img class="reddit-logo" src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
 </div>
 
 <div class="container">
 
-<div class="post">
-
-<!-- SUBREDDIT INFO -->
-
 <div class="subreddit">
-
-<img class="sub-logo" src="https://www.redditstatic.com/avatars/avatar_default_02_24A0ED.png">
-
-<div class="sub-info">
-<div class="sub-name">r/AskAnAmerican</div>
-<div class="post-user">Posted by u/HistoryBuff87 · 7 years ago</div>
+<b>r/AskAnAmerican</b> · 7 years ago
+<div class="post-user">Posted by u/HistoryBuff87</div>
 </div>
-
-</div>
-
-<!-- POST TITLE -->
 
 <div class="post-title">
 How popular was Vincent Whittman before he was disgraced?
@@ -185,92 +169,135 @@ How popular was Vincent Whittman before he was disgraced?
 <div class="post-body">
 I'm too young to know Whittman being anything more than the sick twisted, evil man we know him as today.
 
-But my grandmother swears he was basically *America's sweetheart* in the early 1950s. Apparently everyone watched his show.
+But my grandmother swears he was basically America's sweetheart in the early 1950s and that *everyone* watched his show.
 
-Was he actually that big of a deal, or is that just nostalgia talking?
+Was he actually that big of a deal or is that just nostalgia talking?
 </div>
-
-</div>
-
-<!-- COMMENTS -->
 
 <div class="comments">
 
+<!-- COMMENT 1 -->
+
 <div class="comment">
 
-<img class="user-icon" src="https://www.redditstatic.com/avatars/avatar_default_01_FF66AC.png">
-
-<div class="comment-content">
-
-<div>
-<span class="comment-user">u/ColdWarKid</span>
-<span class="comment-meta">· 7 years ago</span>
+<div class="comment-header">
+<span class="comment-user">u/ColdWarKid</span> · 7 years ago
 </div>
 
 <div class="comment-text">
-My grandfather used to talk about him all the time. Said the guy was on TV *constantly*.
+My grandfather used to talk about him all the time. Said the guy was on TV constantly.
 
-Back then there weren't many channels so when something was popular it was **really** popular.
+Back then there were like three channels, so if something was popular it was REALLY popular.
 </div>
 
 <div class="votes">
-<span class="arrow">▲</span>
-<span class="vote-count">842</span>
-<span class="arrow">▼</span>
+<span class="arrow">⬆</span>842<span class="arrow"> ⬇</span>
 </div>
 
-</div>
-</div>
+<!-- REPLIES -->
+
+<div class="replies">
 
 <div class="comment">
 
-<img class="user-icon" src="https://www.redditstatic.com/avatars/avatar_default_07_46D160.png">
-
-<div class="comment-content">
-
-<div>
-<span class="comment-user">u/americanarchive</span>
-<span class="comment-meta">· 7 years ago</span>
+<div class="comment-header">
+<span class="comment-user">u/americanarchive</span> · 7 years ago
 </div>
 
 <div class="comment-text">
-The wildest part to me is that there are still clips floating around.
-
-You can literally watch episodes knowing what we know now. It's incredibly unsettling.
+You can still find clips of the show online. Watching them now is incredibly uncomfortable.
 </div>
 
 <div class="votes">
-<span class="arrow">▲</span>
-<span class="vote-count">512</span>
-<span class="arrow">▼</span>
+<span class="arrow">⬆</span>312<span class="arrow"> ⬇</span>
 </div>
 
-</div>
 </div>
 
 <div class="comment">
 
-<img class="user-icon" src="https://www.redditstatic.com/avatars/avatar_default_03_FF8717.png">
-
-<div class="comment-content">
-
-<div>
-<span class="comment-user">u/Throwaway1953</span>
-<span class="comment-meta">· 7 years ago</span>
+<div class="comment-header">
+<span class="comment-user">u/oldTVcollector</span> · 7 years ago
 </div>
 
 <div class="comment-text">
-My grandma refuses to talk about him. Every time the topic comes up she just says
+My dad said he hosted charity drives and war bond events. People trusted him a lot.
+</div>
+
+<div class="votes">
+<span class="arrow">⬆</span>198<span class="arrow"> ⬇</span>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- COMMENT 2 -->
+
+<div class="comment">
+
+<div class="comment-header">
+<span class="comment-user">u/Throwaway1953</span> · 7 years ago
+</div>
+
+<div class="comment-text">
+My grandma refuses to talk about him. Every time his name comes up she just says
 "people didn't want to see what was right in front of them".
 </div>
 
 <div class="votes">
-<span class="arrow">▲</span>
-<span class="vote-count">1.2k</span>
-<span class="arrow">▼</span>
+<span class="arrow">⬆</span>1.2k<span class="arrow"> ⬇</span>
+</div>
+
+<!-- REPLY -->
+
+<div class="replies">
+
+<div class="comment">
+
+<div class="comment-header">
+<span class="comment-user">u/ArchivistNorth</span> · 7 years ago
+</div>
+
+<div class="comment-text">
+The network wiped most of the tapes after the investigation. Supposedly only a few episodes survived.
+</div>
+
+<div class="votes">
+<span class="arrow">⬆</span>402<span class="arrow"> ⬇</span>
 </div>
 
 </div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- VIEW MORE COMMENTS -->
+
+<div class="more-comments">
+<span class="more-btn">View more comments</span>
+</div>
+
+<!-- RELATED ANSWERS -->
+
+<div class="related">
+
+<h3>Related answers</h3>
+
+<div class="related-item">
+Why was Vincent Whittman's show removed from TV archives?
+</div>
+
+<div class="related-item">
+Is there surviving footage of “The Smiling Man” episode?
+</div>
+
+<div class="related-item">
+What happened during Vincent Whittman's final broadcast?
 </div>
 
 </div>
