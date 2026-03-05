@@ -131,19 +131,40 @@ body{
 
 /* RELATED ANSWERS */
 
+/* RELATED ANSWERS */
+
 .related{
   margin-top:50px;
 }
 
 .related h3{
   font-size:18px;
-  margin-bottom:16px;
+  margin-bottom:12px;
+}
+
+.related-box{
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  overflow:hidden;
+  background:white;
 }
 
 .related-item{
-  margin-bottom:10px;
-  color:#1a0dab;
+  padding:16px;
   font-size:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:default;
+}
+
+.related-item:not(:last-child){
+  border-bottom:1px solid #e6e6e6;
+}
+
+.arrow-right{
+  color:#878a8c;
+  font-size:20px;
 }
 
 </style>
@@ -279,7 +300,7 @@ The network wiped most of the tapes after the investigation. Supposedly only a f
 <!-- VIEW MORE COMMENTS -->
 
 <div class="more-comments">
-<span class="more-btn">View more comments</span>
+<span class="more-btn">⌄ View more comments</span>
 </div>
 
 <!-- RELATED ANSWERS -->
@@ -288,18 +309,21 @@ The network wiped most of the tapes after the investigation. Supposedly only a f
 
 <h3>Related answers</h3>
 
-<div class="related-item">
-Why was Vincent Whittman's show removed from TV archives?
-</div>
+<div class="related-box">
+  <div class="related-item">
+    Why was Vincent Whittman's show removed from TV archives?
+    <span class="arrow-right">›</span>
+  </div>
 
-<div class="related-item">
-Is there surviving footage of “The Smiling Man” episode?
-</div>
+  <div class="related-item">
+    Is there surviving footage of “The Smiling Man” episode?
+    <span class="arrow-right">›</span>
+  </div>
 
-<div class="related-item">
-What happened during Vincent Whittman's final broadcast?
-</div>
-
+  <div class="related-item">
+    What happened during Vincent Whittman's final broadcast?
+    <span class="arrow-right">›</span>
+  </div>
 </div>
 
 </div>
