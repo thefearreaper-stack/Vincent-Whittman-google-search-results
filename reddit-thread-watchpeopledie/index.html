@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reddit - WatchPeopleDie</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#ffffff;
+  color:#1c1c1c;
+}
+
+/* HEADER */
+
+.header{
+  padding:14px 24px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.reddit-logo{
+  height:30px;
+}
+
+/* MAIN */
+
+.container{
+  max-width:720px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+/* SUBREDDIT HEADER */
+
+.subreddit{
+  font-size:14px;
+  color:#787c7e;
+}
+
+.subreddit b{
+  color:#1c1c1c;
+}
+
+.post-user{
+  margin-top:4px;
+  font-size:13px;
+  color:#878a8c;
+}
+
+/* POST TITLE */
+
+.post-title{
+  font-size:28px;
+  font-weight:600;
+  margin:18px 0 12px;
+}
+
+.post-body{
+  font-size:15px;
+  line-height:1.6;
+  color:#1c1c1c;
+}
+
+/* POST ACTION BAR */
+
+.post-actions{
+  margin-top:14px;
+  display:flex;
+  align-items:center;
+  font-size:14px;
+  color:#878a8c;
+}
+
+.vote-group,
+.comment-group{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+.dot{
+  margin:0 6px;
+  font-size:16px;
+}
+  
+/* DIVIDING LINE */
+.post-divider{
+  margin-top:30px;
+  border-top:1px solid #e6e6e6;
+}
+/* COMMENTS */
+
+.comments{
+  margin-top:40px;
+}
+
+/* COMMENT STRUCTURE */
+
+.comment{
+  margin-top:20px;
+}
+
+.comment-header{
+  font-size:13px;
+  color:#878a8c;
+}
+
+.comment-user{
+  color:#1c1c1c;
+  font-weight:bold;
+}
+
+.comment-text{
+  margin-top:4px;
+  font-size:14px;
+  line-height:1.5;
+}
+
+/* VOTING */
+
+.votes{
+  margin-top:6px;
+  font-size:13px;
+  color:#878a8c;
+}
+
+.arrow{
+  font-size:16px;
+  margin-right:4px;
+}
+
+/* NESTED COMMENTS */
+
+.replies{
+  border-left:2px solid #e6e6e6;
+  margin-left:16px;
+  padding-left:16px;
+  margin-top:10px;
+}
+  
+/* 2 MORE REPLIES */
+  
+.more-replies{
+  margin-top:10px;
+}
+
+.replies-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:#f6f7f8;
+  color:#878a8c;
+  font-size:13px;
+  padding:6px 12px;
+  border-radius:999px;
+}
+  
+/* VIEW MORE BUTTON */
+.more-comments{
+  margin-top:40px;
+}
+  
+.more-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 18px;
+  border-radius:999px;
+  background:#ff4500;
+  color:white;
+  font-size:14px;
+  font-weight:600;
+}
+
+.down-arrow{
+  font-size:18px;
+  transform:rotate(90deg);
+}
+
+/* SEARCH BAR */
+
+.topbar{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.searchbar{
+  flex:1;
+  background:#f6f7f8;
+  border-radius:999px;
+  padding:10px 16px;
+  font-size:14px;
+  color:#878a8c;
+}
+
+.open-app{
+  background:#ff4500;
+  color:white;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+}
+
+/* RELATED ANSWERS */
+
+.related{
+  margin-top:50px;
+}
+
+.related h3{
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+.related-box{
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  overflow:hidden;
+  background:white;
+}
+
+.related-item{
+  padding:16px;
+  font-size:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.related-item:not(:last-child){
+  border-bottom:1px solid #e6e6e6;
+}
+
+.arrow-right{
+  color:#878a8c;
+  font-size:20px;
+}
+
+/* SUGGESTED POST */
+
+.recommended{
+  margin-top:60px;
+  padding-top:16px;
+  border-top:1px solid #e6e6e6;
+}
+
+.rec-sub{
+  font-size:13px;
+  color:#878a8c;
+}
+
+.rec-title{
+  margin-top:6px;
+  font-size:18px;
+  font-weight:600;
+}
+
+.rec-meta{
+  margin-top:6px;
+  font-size:13px;
+  color:#878a8c;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+
+<div class="topbar">
+
+<img class="reddit-logo" src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
+
+<div class="searchbar">
+Search in r/WatchPeopleDie
+</div>
+
+<div class="open-app">
+Log In
+</div>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="subreddit">
+<b>r/WatchPeopleDie</b> · 1 year ago
+<div class="post-user">Posted by u/GeckoBirdyy</div>
+</div>
+
+<div class="post-title">
+Not letting you all forget about the Whittman wheel incident
+</div>
+
+<div class="post-body">
+This clip aired live in 1953 during an early-evening slot intended for families. Let that sink in.
+
+<div class="post-actions">
+
+<div class="vote-group">
+<span class="arrow">⬆</span>
+<span>2.1k</span>
+<span class="arrow">⬇</span>
+</div>
+
+<span class="dot">·</span>
+
+<div class="comment-group">
+<span>💬</span>
+<span>467</span>
+</div>
+
+</div>
+<div class="post-divider"></div>
+  
+<div class="comments">
+
+<!-- COMMENT 1 -->
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/joemclm</span> · 1 year ago</div>
+<div class="comment-text">This clip aired live in 1953 during an early-evening slot intended for families. Let that sink in.</div>
+<div class="votes"><span class="arrow">⬆</span>842 <span class="arrow">⬇</span></div>
+
+<div class="replies">
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/MyPasswordIs2003</span> · 7 years ago</div>
+<div class="comment-text">Back then there were only like three channels.</div>
+<div class="votes"><span class="arrow">⬆</span>312 <span class="arrow">⬇</span></div>
+
+<div class="replies">
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/Hawk15678</span> · 7 years ago</div>
+<div class="comment-text">Yes and no. YAP YAP YAP</div>
+<div class="votes"><span class="arrow">⬆</span>312 <span class="arrow">⬇</span></div>
+</div>
+
+</div>
+</div>
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/Rachendrr72</span> · 7 years ago</div>
+<div class="comment-text">My grandma said he hosted charity drives.</div>
+<div class="votes"><span class="arrow">⬆</span>198 <span class="arrow">⬇</span></div>
+</div>
+
+</div>
+</div>
+
+<div class="more-replies">
+<span class="replies-btn">2 more replies <span class="down-arrow">›</span></span>
+</div>
+
+<!-- COMMENT 2 -->
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/Throwaway1953</span> · 7 years ago</div>
+<div class="comment-text">My grandma refuses to talk about him.</div>
+<div class="votes"><span class="arrow">⬆</span>1.2k <span class="arrow">⬇</span></div>
+
+<div class="replies">
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/ArchivistNorth</span> · 7 years ago</div>
+<div class="comment-text">The network wiped most of the tapes.</div>
+<div class="votes"><span class="arrow">⬆</span>402 <span class="arrow">⬇</span></div>
+</div>
+</div>
+</div>
+
+<div class="more-replies">
+<span class="replies-btn">2 more replies <span class="down-arrow">›</span></span>
+</div>
+
+  <!-- COMMENT 3 -->
+<div class="comment">
+<div class="comment-header"><span class="comment-user">[deleted]</span> · 7 years ago</div>
+<div class="comment-text">[removed]</div>
+<div class="votes"><span class="arrow">⬆</span>-36 <span class="arrow">⬇</span></div>
+
+<div class="replies">
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/AnonymousHampster</span> · 7 years ago</div>
+<div class="comment-text">Please genuinely seek professional help</div>
+<div class="votes"><span class="arrow">⬆</span>62 <span class="arrow">⬇</span></div>
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/Throwaway567</span> · 7 years ago</div>
+<div class="comment-text">Found one!!!! Weirdo</div>
+<div class="votes"><span class="arrow">⬆</span>17 <span class="arrow">⬇</span></div>
+
+</div>
+</div>
+</div>
+<!-- COMMENT 4 (VOX THREAD) -->
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/HellsHottestMediaOverlord</span> · 7 years ago</div>
+<div class="comment-text">He was very popular. And very handsome.</div>
+<div class="votes"><span class="arrow">⬆</span>-1 <span class="arrow">⬇</span></div>
+
+<div class="replies">
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/FashionDollxx</span> · 7 years ago</div>
+<div class="comment-text">Thought I might find you here, V</div>
+<div class="votes"><span class="arrow">⬆</span>0 <span class="arrow">⬇</span></div>
+
+<div class="replies">
+
+<div class="comment">
+<div class="comment-header"><span class="comment-user">u/MothDaddy69</span> · 7 years ago</div>
+<div class="comment-text">Ew what the fuck are you guys doing on reddit</div>
+<div class="votes"><span class="arrow">⬆</span>-2 <span class="arrow">⬇</span></div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- VIEW MORE COMMENTS -->
+
+<div class="more-comments">
+<span class="more-btn"><span class="down-arrow">›</span> View more comments</span>
+</div>
+
+<!-- RELATED ANSWERS -->
+
+<div class="related">
+
+<h3>Related answers</h3>
+
+<div class="related-box">
+<div class="related-item">
+Why was Vincent Whittman's show removed from TV archives?
+<span class="arrow-right">›</span>
+</div>
+
+<div class="related-item">
+Is there surviving footage of “The Smiling Man” episode?
+<span class="arrow-right">›</span>
+</div>
+
+<div class="related-item">
+What happened during Vincent Whittman's final broadcast?
+<span class="arrow-right">›</span>
+</div>
+</div>
+
+</div>
+
+<!-- SUGGESTED POST -->
+
+<div class="recommended">
+
+<div class="rec-sub">
+r/CelebConspiracyTheories · 3 days ago
+</div>
+
+<div class="rec-title">
+Did Vincent Whittman secretly communicate with dolphins through television frequencies?
+</div>
+
+<div class="rec-meta">
+⬆ 412 · 💬 96
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
