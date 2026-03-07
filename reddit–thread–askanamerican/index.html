@@ -115,12 +115,10 @@ body{
 
 /* VIEW MORE BUTTON */
 
-.more-comments{
-  margin-top:40px;
-}
-
 .more-btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
   padding:10px 18px;
   border-radius:999px;
   background:#ff4500;
@@ -129,7 +127,36 @@ body{
   font-weight:600;
 }
 
-/* RELATED ANSWERS */
+.down-arrow{
+  font-size:18px;
+  transform:rotate(90deg);
+}
+
+/* SEARCH BAR */
+
+.topbar{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.searchbar{
+  flex:1;
+  background:#f6f7f8;
+  border-radius:999px;
+  padding:10px 16px;
+  font-size:14px;
+  color:#878a8c;
+}
+
+.open-app{
+  background:#ff4500;
+  color:white;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+}
 
 /* RELATED ANSWERS */
 
@@ -166,7 +193,31 @@ body{
   color:#878a8c;
   font-size:20px;
 }
+  
+/* SUGGESTED POST */
+.recommended{
+  max-width:720px;
+  margin:60px auto 80px;
+  padding:16px 20px;
+  border-top:1px solid #e6e6e6;
+}
 
+.rec-sub{
+  font-size:13px;
+  color:#878a8c;
+}
+
+.rec-title{
+  margin-top:6px;
+  font-size:18px;
+  font-weight:600;
+}
+
+.rec-meta{
+  margin-top:6px;
+  font-size:13px;
+  color:#878a8c;
+}
 </style>
 </head>
 
@@ -431,9 +482,27 @@ The network wiped most of the tapes after the investigation. Supposedly only a f
 <!-- VIEW MORE COMMENTS -->
 
 <div class="more-comments">
-<span class="more-btn">⌄ View more comments</span>
+<span class="more-btn"><span class="down-arrow">›</span> View more comments</span>
+</div>
+        
+<!-- SEARCH BAR -->
+<div class="header">
+
+<div class="topbar">
+
+<img class="reddit-logo" src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
+
+<div class="searchbar">
+Vincent Whittman's...
 </div>
 
+<div class="open-app">
+Open App
+</div>
+
+</div>
+
+</div>
 <!-- RELATED ANSWERS -->
 
 <div class="related">
@@ -457,7 +526,22 @@ The network wiped most of the tapes after the investigation. Supposedly only a f
   </div>
 </div>
 
+<!-- SUGGESTED POST -->
+</div>
+<div class="recommended">
+
+<div class="rec-sub">
+r/CelebConspiracyTheories · 3 days ago
 </div>
 
+<div class="rec-title">
+Did Vincent Whittman secretly communicate with dolphins through television frequencies?
+</div>
+
+<div class="rec-meta">
+⬆ 412 · 💬 96
+</div>
+
+</div>
 </body>
 </html>
