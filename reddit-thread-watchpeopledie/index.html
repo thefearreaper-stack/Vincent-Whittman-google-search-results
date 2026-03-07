@@ -90,6 +90,84 @@ body{
   margin-top:30px;
   border-top:1px solid #e6e6e6;
 }
+
+/* AGE GATE */
+
+.age-gate{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#0f0f0f;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.age-card{
+  background:#1a1a1b;
+  color:white;
+  padding:30px;
+  border-radius:12px;
+  width:340px;
+  text-align:center;
+}
+
+.age-card h2{
+  margin-top:0;
+}
+
+.age-card p{
+  color:#b3b3b3;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.age-button{
+  margin-top:16px;
+  background:#ff4500;
+  border:none;
+  color:white;
+  padding:10px 20px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+}
+/* FAKE VIDEO PLAYER */
+
+.video-box{
+  width:100%;
+  height:360px;
+  background:#000;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:18px 0;
+  position:relative;
+}
+
+.play-button{
+  width:70px;
+  height:70px;
+  background:rgba(255,255,255,0.9);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.play-triangle{
+  width:0;
+  height:0;
+  border-left:18px solid black;
+  border-top:12px solid transparent;
+  border-bottom:12px solid transparent;
+  margin-left:4px;
+}
 /* COMMENTS */
 
 .comments{
@@ -268,7 +346,31 @@ body{
 </style>
 </head>
 
+<script>
+
+function enterSite(){
+  document.getElementById("ageGate").style.display="none";
+}
+
+</script>
+  
 <body>
+
+<div class="age-gate" id="ageGate">
+
+  <div class="age-card">
+    <h2>Adult Content</h2>
+
+    <p>
+    This community contains graphic violence and disturbing content.
+    You must be 18+ to continue.
+    </p>
+
+    <button class="age-button" onclick="enterSite()">Yes, I am over 18</button>
+
+  </div>
+
+</div>
 
 <div class="header">
 
@@ -291,7 +393,7 @@ Log In
 <div class="container">
 
 <div class="subreddit">
-<b>r/WatchPeopleDie</b> · 1 year ago
+<b>r/WatchPeopleDie</b> <span style="color:#ff4500;font-weight:bold;">NSFW</span> · 1 year ago
 <div class="post-user">Posted by u/GeckoBirdyy</div>
 </div>
 
@@ -299,6 +401,12 @@ Log In
 Not letting you all forget about the Whittman wheel incident
 </div>
 
+<div class="video-box">
+  <div class="play-button">
+    <div class="play-triangle"></div>
+  </div>
+</div>
+  
 <div class="post-body">
 This clip aired live in 1953 during an early-evening slot intended for families. Let that sink in.
 
