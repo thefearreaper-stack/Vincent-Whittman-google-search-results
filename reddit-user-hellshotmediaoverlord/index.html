@@ -2,128 +2,226 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Reddit - HellsHottestMediaOverlord</title>
+<title>Reddit - u/HellsHottestMediaOverlord</title>
 
 <style>
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
-  margin:0;
-  background:white;
+margin:0;
+font-family:Arial, sans-serif;
+background:#ffffff;
+color:#1c1c1c;
 }
 
+/* HEADER */
+
+.header{
+padding:14px 24px;
+border-bottom:1px solid #e5e5e5;
+}
+
+.topbar{
+display:flex;
+align-items:center;
+gap:16px;
+}
+
+.reddit-logo{
+height:30px;
+}
+
+.searchbar{
+flex:1;
+background:#f6f7f8;
+border-radius:999px;
+padding:10px 16px;
+font-size:14px;
+color:#878a8c;
+}
+
+.open-app{
+background:#ff4500;
+color:white;
+padding:8px 16px;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+max-width:720px;
+margin:40px auto;
+padding:0 20px;
+}
+
+/* PROFILE HEADER */
+
 .profile-name{
-  font-size:28px;
-  font-weight:700;
+font-size:28px;
+font-weight:700;
 }
 
 .profile-user{
-  font-size:14px;
-  color:#878a8c;
-  margin-top:4px;
+font-size:14px;
+color:#878a8c;
+margin-top:4px;
 }
 
+/* ABOUT BOX */
+
 .about-box{
-  margin-top:20px;
-  border:1px solid #e6e6e6;
-  border-radius:12px;
-  overflow:hidden;
+margin-top:20px;
+border:1px solid #e6e6e6;
+border-radius:12px;
+overflow:hidden;
 }
 
 .about-header{
-  padding:16px;
-  display:flex;
-  justify-content:space-between;
-  font-weight:600;
-  cursor:pointer;
+padding:16px;
+display:flex;
+justify-content:space-between;
+font-weight:600;
+cursor:pointer;
 }
 
 .about-content{
-  padding:16px;
-  border-top:1px solid #e6e6e6;
-  display:none;
+padding:18px;
+border-top:1px solid #e6e6e6;
+display:none;
 }
 
-.trophies{
-  margin-top:20px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+/* STATS GRID */
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+row-gap:18px;
+}
+
+.stat{
+text-align:left;
+}
+
+.stat-number{
+font-size:18px;
+font-weight:700;
+}
+
+.stat-label{
+font-size:12px;
+color:#878a8c;
+margin-top:2px;
+}
+
+/* TROPHY CASE */
+
+.trophy-divider{
+margin:20px 0;
+border-top:1px solid #e6e6e6;
+}
+
+.trophy-title{
+font-size:12px;
+letter-spacing:1px;
+color:#878a8c;
+margin-bottom:10px;
 }
 
 .trophy{
-  background:#f6f7f8;
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:13px;
+font-size:14px;
+margin:6px 0;
 }
 
+/* TABS */
+
 .profile-tabs{
-  display:flex;
-  gap:12px;
-  margin-top:25px;
+display:flex;
+gap:12px;
+margin-top:26px;
 }
 
 .tab{
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:14px;
-  color:#878a8c;
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+color:#878a8c;
 }
 
 .tab.active{
-  background:#f6f7f8;
-  color:#1c1c1c;
-  font-weight:600;
+background:#f6f7f8;
+color:#1c1c1c;
+font-weight:600;
 }
+
+.tabs-divider{
+margin-top:16px;
+border-top:1px solid #e6e6e6;
+}
+
+/* ACTIVITY POSTS */
 
 .activity{
-  padding:18px 0;
-  border-bottom:1px solid #e6e6e6;
+padding:18px 0;
+border-bottom:1px solid #e6e6e6;
 }
 
-.activity-meta{
-  font-size:13px;
-  color:#878a8c;
+.activity-sub{
+font-size:13px;
+color:#878a8c;
 }
 
 .activity-title{
-  font-size:14px;
-  margin-top:6px;
-  font-weight:600;
+font-size:16px;
+font-weight:600;
+margin-top:4px;
+}
+
+.activity-meta{
+font-size:13px;
+color:#878a8c;
+margin-top:6px;
 }
 
 .activity-text{
-  margin-top:6px;
-  font-size:14px;
+font-size:14px;
+margin-top:6px;
+line-height:1.5;
 }
 
+/* VIEW MORE */
+
 .view-more{
-  margin:30px auto;
-  text-align:center;
-  background:#ff4500;
-  color:white;
-  padding:10px 20px;
-  border-radius:999px;
-  width:180px;
-  font-weight:600;
+margin:40px auto;
+text-align:center;
+background:#ff4500;
+color:white;
+padding:10px 20px;
+border-radius:999px;
+width:180px;
+font-weight:600;
 }
 
 </style>
 
 <script>
-function toggleAbout(){
-  const box = document.getElementById("aboutContent");
 
-  if(box.style.display === "block"){
-    box.style.display = "none";
-  } else {
-    box.style.display = "block";
-  }
+function toggleAbout(){
+const box=document.getElementById("aboutContent");
+
+if(box.style.display==="block"){
+box.style.display="none";
+}else{
+box.style.display="block";
 }
+
+}
+
 </script>
 
 </head>
+
 <body>
 
 <div class="header">
@@ -141,7 +239,9 @@ Log In
 </div>
 
 </div>
+
 </div>
+
 <div class="container">
 
 <div class="profile-name">
@@ -152,25 +252,46 @@ HellsHottestMediaOverlord
 u/HellsHottestMediaOverlord
 </div>
 
+<!-- ABOUT BOX -->
+
 <div class="about-box">
 
 <div class="about-header" onclick="toggleAbout()">
 <span>About</span>
-<span class="arrow">▾</span>
+<span>▾</span>
 </div>
 
 <div class="about-content" id="aboutContent">
 
-<div>🔥 Karma: 4,298,221</div>
-<div>🗣 Contributions: 12,481 comments</div>
-<div>📅 Reddit age: 18 years</div>
-<div>📺 Active in: 94 communities</div>
+<div class="about-grid">
 
+<div class="stat">
+<div class="stat-number">4,298,221</div>
+<div class="stat-label">Karma</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">12,481</div>
+<div class="stat-label">Contributions</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">18 years</div>
+<div class="stat-label">Reddit age</div>
+</div>
+
+<div class="stat">
+<div class="stat-number">94</div>
+<div class="stat-label">Active in</div>
 </div>
 
 </div>
 
-<div class="trophies">
+<div class="trophy-divider"></div>
+
+<div class="trophy-title">
+TROPHY CASE
+</div>
 
 <div class="trophy">🏆 Controversial</div>
 <div class="trophy">🏆 OG Redditor</div>
@@ -178,6 +299,10 @@ u/HellsHottestMediaOverlord
 <div class="trophy">🏆 Top Commenter</div>
 
 </div>
+
+</div>
+
+<!-- TABS -->
 
 <div class="profile-tabs">
 
@@ -187,14 +312,22 @@ u/HellsHottestMediaOverlord
 
 </div>
 
+<div class="tabs-divider"></div>
+
+<!-- ACTIVITY -->
+
 <div class="activity">
 
-<div class="activity-meta">
-<b>HellsHottestMediaOverlord</b> commented 6 days ago
+<div class="activity-sub">
+r/CelebConspiracyTheories
 </div>
 
 <div class="activity-title">
-r/CelebConspiracyTheories
+Was Vincent Whittman actually investigated by the FCC?
+</div>
+
+<div class="activity-meta">
+HellsHottestMediaOverlord commented 6 days ago
 </div>
 
 <div class="activity-text">
@@ -203,9 +336,72 @@ You idiots will believe anything if a documentary narrator whispers it slowly en
 
 </div>
 
+<div class="activity">
+
+<div class="activity-sub">
+r/TelevisionHistory
+</div>
+
+<div class="activity-title">
+Why did early TV hosts smoke on air?
+</div>
+
+<div class="activity-meta">
+HellsHottestMediaOverlord commented 12 days ago
+</div>
+
+<div class="activity-text">
+Because television used to be for adults. Not algorithm-rotted toddlers with attention spans measured in seconds.
+</div>
+
+</div>
+
+<div class="activity">
+
+<div class="activity-sub">
+r/DeerAreFuckingStupid
+</div>
+
+<div class="activity-title">
+Truck vs deer compilation
+</div>
+
+<div class="activity-meta">
+HellsHottestMediaOverlord commented 2 days ago
+</div>
+
+<div class="activity-text">
+The way it just folds over the hood. Perfect physics.
+</div>
+
+</div>
+
+<div class="activity">
+
+<div class="activity-sub">
+r/Music
+</div>
+
+<div class="activity-title">
+Are full albums dying out?
+</div>
+
+<div class="activity-meta">
+HellsHottestMediaOverlord commented 3 weeks ago
+</div>
+
+<div class="activity-text">
+Frank Sinatra understood sequencing better in 1956 than most modern artists do today. Albums are meant to be listened to start to finish, not diced into algorithmic slop for teenagers.
+</div>
+
+</div>
+
 <div class="view-more">
 View more activity
 </div>
 
-<body>
+</div>
+
+</body>
+</html>
   
