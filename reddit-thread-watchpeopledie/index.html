@@ -234,7 +234,27 @@ body{
   padding:6px 12px;
   border-radius:999px;
 }
-  
+
+/* COLLAPSED COMMENT */
+
+.collapsed .comment-text,
+.collapsed .votes,
+.collapsed .replies{
+  display:none;
+}
+
+.collapsed .comment-header{
+  cursor:pointer;
+  opacity:0.85;
+}
+
+.collapsed .comment-header:hover{
+  opacity:1;
+}
+.collapsed{
+  border-left:3px solid #878a8c;
+  padding-left:10px;
+}  
 /* VIEW MORE BUTTON */
 .more-comments{
   margin-top:40px;
@@ -352,6 +372,12 @@ function enterSite(){
   document.getElementById("ageGate").style.display="none";
 }
 
+<script>
+function toggleComment(header){
+  const comment = header.parentElement;
+  comment.classList.toggle("collapsed");
+}
+</script>
 </script>
   
 <body>
@@ -510,8 +536,10 @@ This clip aired live in 1953 during an early-evening slot intended for families.
 </div>
 <!-- COMMENT 4 (VOX THREAD) -->
 
-<div class="comment">
-<div class="comment-header"><span class="comment-user">u/HellsHottestMediaOverlord</span> · 7 years ago</div>
+<div class="comment collapsed">
+<div class="comment-header" onclick="toggleComment(this)">
+<span class="comment-user">u/HellsHottestMediaOverlord</span> · 7 years ago
+</div>
 <div class="comment-text">Fuck, the way he gets squished like a bug. Never gets old.</div>
 <div class="votes"><span class="arrow">⬆</span>-1 <span class="arrow">⬇</span></div>
 
