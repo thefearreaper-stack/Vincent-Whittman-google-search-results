@@ -51,6 +51,8 @@ fill:#0f0f0f;
 }
 
 .signin{
+display:flex;
+align-items:center;
 border:1px solid #065fd4;
 color:#065fd4;
 padding:6px 14px;
@@ -75,7 +77,26 @@ max-width:900px;
 }
 
 .sidebar{
-width:400px;
+width:402px;
+}
+
+.rec{
+display:flex;
+gap:10px;
+margin-bottom:12px;
+align-items:flex-start;
+}
+
+.thumb{
+width:168px;
+height:94px;
+background:black;
+border-radius:8px;
+flex-shrink:0;
+}
+
+.rec-info{
+width:214px;
 }
 
 /* VIDEO PLAYER */
@@ -194,7 +215,29 @@ margin-left:12px;
 }
 
 /* ACTIONS */
+.like-box{
+display:flex;
+align-items:center;
+padding:8px 14px;
+gap:10px;
+}
 
+.like-left{
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.like-right{
+display:flex;
+align-items:center;
+}
+
+.divider{
+width:1px;
+height:18px;
+background:#d9d9d9;
+}
 .actions{
 display:flex;
 gap:10px;
@@ -209,6 +252,7 @@ background:#f2f2f2;
 padding:8px 14px;
 border-radius:999px;
 font-size:14px;
+font-weight:600;
 }
 
 .button svg{
@@ -329,12 +373,21 @@ color:#606060;
 </svg>
 
 <svg class="icon" viewBox="0 0 24 24">
+<path d="M10 18a8 8 0 1 1 5.3-14l5.4 5.4-1.4 1.4-5.1-5.1A6 6 0 1 0 10 16a5.9 5.9 0 0 0 3.7-1.3l1.4 1.4A8 8 0 0 1 10 18z"/>
+</svg>
 <circle cx="12" cy="5" r="2"/>
 <circle cx="12" cy="12" r="2"/>
 <circle cx="12" cy="19" r="2"/>
 </svg>
 
-<div class="signin">Sign in</div>
+<div class="signin">
+
+<svg width="18" height="18" viewBox="0 0 24 24" style="margin-right:6px;">
+<path fill="#065fd4" d="M12 12c2.7 0 4.5-2 4.5-4.5S14.7 3 12 3 7.5 5 7.5 7.5 9.3 12 12 12zm0 2c-3 0-9 1.5-9 4.5V21h18v-2.5c0-3-6-4.5-9-4.5z"/>
+</svg>
+
+Sign in
+</div>
 
 </div>
 
@@ -370,12 +423,14 @@ color:#606060;
 
 <div class="controls-right">
 
+<!-- SETTINGS -->
 <svg class="control-icon" viewBox="0 0 24 24">
-<circle cx="12" cy="12" r="2"/>
+<path d="M19.4 13a7.8 7.8 0 0 0 .1-2l2-1.5-2-3.5-2.3 1a7.8 7.8 0 0 0-1.7-1L13 2h-4L8.5 6a7.8 7.8 0 0 0-1.7 1l-2.3-1-2 3.5 2 1.5a7.8 7.8 0 0 0 .1 2l-2 1.5 2 3.5 2.3-1a7.8 7.8 0 0 0 1.7 1L9 22h4l.5-4a7.8 7.8 0 0 0 1.7-1l2.3 1 2-3.5z"/>
 </svg>
 
+<!-- FULLSCREEN -->
 <svg class="control-icon" viewBox="0 0 24 24">
-<rect x="4" y="4" width="16" height="16"/>
+<path d="M7 14H5v5h5v-2H7v-3zm0-4h2V7h3V5H5v5zm10 7h-3v2h5v-5h-2v3zm-3-12v2h3v3h2V5h-5z"/>
 </svg>
 
 </div>
@@ -409,13 +464,17 @@ The Lost Broadcast of Vincent Whittman (1953)
 
 </div>
 
-<div class="actions">
+<div class="button like-box">
 
-<div class="button">👍 12K</div>
-<div class="button">👎</div>
-<div class="button">Share</div>
-<div class="button">Save</div>
-<div class="button">⋯</div>
+<div class="like-left">
+👍 <span>12K</span>
+</div>
+
+<div class="divider"></div>
+
+<div class="like-right">
+👎
+</div>
 
 </div>
 
