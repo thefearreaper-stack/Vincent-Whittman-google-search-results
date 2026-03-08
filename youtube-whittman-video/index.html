@@ -8,7 +8,7 @@
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Roboto, Arial, sans-serif;
 background:#ffffff;
 color:#0f0f0f;
 }
@@ -17,31 +17,37 @@ color:#0f0f0f;
 
 .topbar{
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:12px 20px;
+align-items:center;
+padding:10px 16px;
 border-bottom:1px solid #e5e5e5;
 }
 
 .left-top{
 display:flex;
 align-items:center;
-gap:16px;
+gap:18px;
 }
 
 .hamburger{
 font-size:22px;
+cursor:default;
 }
 
-.youtube-logo{
-font-weight:bold;
-font-size:20px;
+.logo{
+height:20px;
 }
 
 .right-top{
 display:flex;
 align-items:center;
-gap:18px;
+gap:20px;
+}
+
+.icon{
+width:22px;
+height:22px;
+fill:#0f0f0f;
 }
 
 .signin{
@@ -58,8 +64,8 @@ font-size:14px;
 .page{
 display:flex;
 max-width:1400px;
-margin:20px auto;
-gap:30px;
+margin:24px auto;
+gap:28px;
 padding:0 20px;
 }
 
@@ -69,32 +75,69 @@ max-width:900px;
 }
 
 .sidebar{
-width:360px;
+width:400px;
 }
 
 /* VIDEO PLAYER */
 
-.video-player{
+.video{
+background:black;
 width:100%;
 height:506px;
-background:black;
 border-radius:12px;
 position:relative;
 }
 
-.progress{
+.controls{
 position:absolute;
 bottom:0;
 left:0;
-height:4px;
 width:100%;
-background:#444;
+padding:10px;
+box-sizing:border-box;
 }
 
-.progress-bar{
-height:100%;
-width:62%;
+.progress{
+height:4px;
+background:#555;
+position:relative;
+margin-bottom:8px;
+}
+
+.progress-dot{
+width:12px;
+height:12px;
 background:#ff0000;
+border-radius:50%;
+position:absolute;
+top:-4px;
+left:0;
+}
+
+.control-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+font-size:14px;
+}
+
+.controls-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.controls-right{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.control-icon{
+width:18px;
+height:18px;
+fill:white;
 }
 
 /* TITLE */
@@ -102,16 +145,16 @@ background:#ff0000;
 .video-title{
 font-size:22px;
 font-weight:600;
-margin:16px 0;
+margin:14px 0;
 }
 
-/* CHANNEL */
+/* CHANNEL ROW */
 
 .channel-row{
 display:flex;
-align-items:center;
 justify-content:space-between;
-margin-bottom:14px;
+align-items:center;
+margin-bottom:12px;
 }
 
 .channel-left{
@@ -120,11 +163,16 @@ align-items:center;
 gap:12px;
 }
 
-.channel-icon{
+.channel-avatar{
 width:40px;
 height:40px;
-background:#ddd;
 border-radius:50%;
+background:#ddd;
+}
+
+.channel-meta{
+display:flex;
+flex-direction:column;
 }
 
 .channel-name{
@@ -142,25 +190,30 @@ color:white;
 padding:10px 16px;
 border-radius:999px;
 font-weight:600;
+margin-left:12px;
 }
 
-/* ACTION BUTTONS */
+/* ACTIONS */
 
 .actions{
 display:flex;
 gap:10px;
-margin:10px 0 18px 0;
-flex-wrap:wrap;
+margin:14px 0;
 }
 
 .button{
+display:flex;
+align-items:center;
+gap:6px;
 background:#f2f2f2;
 padding:8px 14px;
 border-radius:999px;
 font-size:14px;
-display:flex;
-align-items:center;
-gap:6px;
+}
+
+.button svg{
+width:18px;
+height:18px;
 }
 
 /* DESCRIPTION */
@@ -169,7 +222,7 @@ gap:6px;
 background:#f2f2f2;
 padding:14px;
 border-radius:12px;
-margin-bottom:24px;
+margin-top:10px;
 }
 
 .desc-meta{
@@ -181,10 +234,9 @@ margin-bottom:8px;
 
 .comments-header{
 display:flex;
-align-items:center;
-gap:16px;
+gap:18px;
+margin-top:24px;
 font-size:16px;
-margin-bottom:14px;
 }
 
 .sort{
@@ -193,16 +245,16 @@ font-size:14px;
 }
 
 .add-comment{
-color:#606060;
-padding:12px 0;
+padding:14px 0;
 border-bottom:1px solid #e5e5e5;
-margin-bottom:20px;
+color:#606060;
+margin-bottom:18px;
 }
 
 .comment{
 display:flex;
 gap:12px;
-margin-bottom:20px;
+margin-bottom:22px;
 }
 
 .comment-avatar{
@@ -212,10 +264,6 @@ background:#ddd;
 border-radius:50%;
 }
 
-.comment-body{
-font-size:14px;
-}
-
 .comment-user{
 font-weight:600;
 font-size:13px;
@@ -223,7 +271,7 @@ font-size:13px;
 
 .comment-text{
 margin-top:4px;
-line-height:1.5;
+font-size:14px;
 }
 
 /* SIDEBAR */
@@ -231,13 +279,13 @@ line-height:1.5;
 .rec{
 display:flex;
 gap:10px;
-margin-bottom:14px;
+margin-bottom:12px;
 }
 
-.thumbnail{
+.thumb{
 width:168px;
 height:94px;
-background:#000;
+background:black;
 border-radius:8px;
 }
 
@@ -252,7 +300,6 @@ font-weight:600;
 .rec-channel{
 font-size:13px;
 color:#606060;
-margin-top:4px;
 }
 
 .rec-meta{
@@ -265,33 +312,78 @@ color:#606060;
 
 <body>
 
-<!-- TOP BAR -->
-
 <div class="topbar">
 
 <div class="left-top">
+
 <div class="hamburger">☰</div>
-<div class="youtube-logo">YouTube</div>
+
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg">
+
 </div>
 
 <div class="right-top">
-<div>🔍</div>
-<div>⋮</div>
+
+<svg class="icon" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10" stroke="none"/>
+</svg>
+
+<svg class="icon" viewBox="0 0 24 24">
+<circle cx="12" cy="5" r="2"/>
+<circle cx="12" cy="12" r="2"/>
+<circle cx="12" cy="19" r="2"/>
+</svg>
+
 <div class="signin">Sign in</div>
+
 </div>
 
 </div>
 
 <div class="page">
 
-<!-- MAIN CONTENT -->
-
 <div class="main">
 
-<div class="video-player">
+<div class="video">
+
+<div class="controls">
+
 <div class="progress">
-<div class="progress-bar"></div>
+<div class="progress-dot"></div>
 </div>
+
+<div class="control-row">
+
+<div class="controls-left">
+
+<svg class="control-icon" viewBox="0 0 24 24">
+<polygon points="6,4 20,12 6,20"/>
+</svg>
+
+<svg class="control-icon" viewBox="0 0 24 24">
+<polygon points="3,9 7,9 12,5 12,19 7,15 3,15"/>
+</svg>
+
+<div>0:00 / 48:55</div>
+
+</div>
+
+<div class="controls-right">
+
+<svg class="control-icon" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="2"/>
+</svg>
+
+<svg class="control-icon" viewBox="0 0 24 24">
+<rect x="4" y="4" width="16" height="16"/>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 <div class="video-title">
@@ -302,17 +394,17 @@ The Lost Broadcast of Vincent Whittman (1953)
 
 <div class="channel-left">
 
-<div class="channel-icon"></div>
+<div class="channel-avatar"></div>
 
-<div>
+<div class="channel-meta">
+
 <div class="channel-name">Archive Television</div>
 <div class="sub-count">421K subscribers</div>
-</div>
 
 </div>
 
-<div class="subscribe">
-Subscribe
+<div class="subscribe">Subscribe</div>
+
 </div>
 
 </div>
@@ -321,8 +413,8 @@ Subscribe
 
 <div class="button">👍 12K</div>
 <div class="button">👎</div>
-<div class="button">↗ Share</div>
-<div class="button">🔖 Save</div>
+<div class="button">Share</div>
+<div class="button">Save</div>
 <div class="button">⋯</div>
 
 </div>
@@ -333,30 +425,22 @@ Subscribe
 3,218,449 views • Oct 17, 2016
 </div>
 
-<div>
-This clip aired live in 1953 during an early-evening family slot.  
-<br><br>
-The footage was believed lost until a private collector digitized an old broadcast reel.
-<br><br>
+This clip aired live in 1953 during an early-evening family slot.<br><br>
+The footage was believed lost until a private collector digitized an old broadcast reel.<br><br>
 Viewer discretion is advised.
-</div>
 
 </div>
 
 <div class="comments-header">
 <div>4,821 Comments</div>
-<div class="sort">≡ Sort by</div>
+<div class="sort">Sort by</div>
 </div>
 
-<div class="add-comment">
-Add a comment...
-</div>
-
-<!-- COMMENTS -->
+<div class="add-comment">Add a comment...</div>
 
 <div class="comment">
 <div class="comment-avatar"></div>
-<div class="comment-body">
+<div>
 <div class="comment-user">retroviewer91</div>
 <div class="comment-text">The audience laughing makes this ten times worse.</div>
 </div>
@@ -364,36 +448,28 @@ Add a comment...
 
 <div class="comment">
 <div class="comment-avatar"></div>
-<div class="comment-body">
+<div>
 <div class="comment-user">AnalogGhost</div>
-<div class="comment-text">My grandfather swore he saw this live but nobody believed him.</div>
+<div class="comment-text">My grandfather swore he saw this live.</div>
 </div>
 </div>
 
 <div class="comment">
 <div class="comment-avatar"></div>
-<div class="comment-body">
+<div>
 <div class="comment-user">MothDaddy69</div>
 <div class="comment-text">How did this air on television???</div>
 </div>
 </div>
 
-<div class="comment">
-<div class="comment-avatar"></div>
-<div class="comment-body">
-<div class="comment-user">HellsHottestMediaOverlord</div>
-<div class="comment-text">The way he just folds. Television was better when it wasn't sanitized.</div>
 </div>
-</div>
-
-</div>
-
-<!-- SIDEBAR -->
 
 <div class="sidebar">
 
+<!-- repeated recommendations -->
+
 <div class="rec">
-<div class="thumbnail"></div>
+<div class="thumb"></div>
 <div class="rec-info">
 <div class="rec-title">Weirdest Live TV Moments Ever Broadcast</div>
 <div class="rec-channel">RetroVision</div>
@@ -402,7 +478,7 @@ Add a comment...
 </div>
 
 <div class="rec">
-<div class="thumbnail"></div>
+<div class="thumb"></div>
 <div class="rec-info">
 <div class="rec-title">Lost 1950s Television Recordings</div>
 <div class="rec-channel">Broadcast Archive</div>
@@ -411,7 +487,7 @@ Add a comment...
 </div>
 
 <div class="rec">
-<div class="thumbnail"></div>
+<div class="thumb"></div>
 <div class="rec-info">
 <div class="rec-title">The Dark History of Early Game Shows</div>
 <div class="rec-channel">MediaHistory</div>
@@ -420,11 +496,29 @@ Add a comment...
 </div>
 
 <div class="rec">
-<div class="thumbnail"></div>
+<div class="thumb"></div>
 <div class="rec-info">
 <div class="rec-title">10 TV Broadcasts That Should Never Have Aired</div>
 <div class="rec-channel">TVVault</div>
 <div class="rec-meta">3.4M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">Unsolved Television Broadcast Mysteries</div>
+<div class="rec-channel">SignalLost</div>
+<div class="rec-meta">987K views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">Forgotten TV Hosts of the 1950s</div>
+<div class="rec-channel">HistoryTube</div>
+<div class="rec-meta">642K views</div>
 </div>
 </div>
 
