@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YouTube</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#ffffff;
+color:#0f0f0f;
+}
+
+/* TOP BAR */
+
+.topbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 20px;
+border-bottom:1px solid #e5e5e5;
+}
+
+.left-top{
+display:flex;
+align-items:center;
+gap:16px;
+}
+
+.hamburger{
+font-size:22px;
+}
+
+.youtube-logo{
+font-weight:bold;
+font-size:20px;
+}
+
+.right-top{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.signin{
+border:1px solid #065fd4;
+color:#065fd4;
+padding:6px 14px;
+border-radius:999px;
+font-weight:600;
+font-size:14px;
+}
+
+/* PAGE LAYOUT */
+
+.page{
+display:flex;
+max-width:1400px;
+margin:20px auto;
+gap:30px;
+padding:0 20px;
+}
+
+.main{
+flex:1;
+max-width:900px;
+}
+
+.sidebar{
+width:360px;
+}
+
+/* VIDEO PLAYER */
+
+.video-player{
+width:100%;
+height:506px;
+background:black;
+border-radius:12px;
+position:relative;
+}
+
+.progress{
+position:absolute;
+bottom:0;
+left:0;
+height:4px;
+width:100%;
+background:#444;
+}
+
+.progress-bar{
+height:100%;
+width:62%;
+background:#ff0000;
+}
+
+/* TITLE */
+
+.video-title{
+font-size:22px;
+font-weight:600;
+margin:16px 0;
+}
+
+/* CHANNEL */
+
+.channel-row{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:14px;
+}
+
+.channel-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.channel-icon{
+width:40px;
+height:40px;
+background:#ddd;
+border-radius:50%;
+}
+
+.channel-name{
+font-weight:600;
+}
+
+.sub-count{
+font-size:13px;
+color:#606060;
+}
+
+.subscribe{
+background:#0f0f0f;
+color:white;
+padding:10px 16px;
+border-radius:999px;
+font-weight:600;
+}
+
+/* ACTION BUTTONS */
+
+.actions{
+display:flex;
+gap:10px;
+margin:10px 0 18px 0;
+flex-wrap:wrap;
+}
+
+.button{
+background:#f2f2f2;
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+/* DESCRIPTION */
+
+.description{
+background:#f2f2f2;
+padding:14px;
+border-radius:12px;
+margin-bottom:24px;
+}
+
+.desc-meta{
+font-weight:600;
+margin-bottom:8px;
+}
+
+/* COMMENTS */
+
+.comments-header{
+display:flex;
+align-items:center;
+gap:16px;
+font-size:16px;
+margin-bottom:14px;
+}
+
+.sort{
+color:#606060;
+font-size:14px;
+}
+
+.add-comment{
+color:#606060;
+padding:12px 0;
+border-bottom:1px solid #e5e5e5;
+margin-bottom:20px;
+}
+
+.comment{
+display:flex;
+gap:12px;
+margin-bottom:20px;
+}
+
+.comment-avatar{
+width:36px;
+height:36px;
+background:#ddd;
+border-radius:50%;
+}
+
+.comment-body{
+font-size:14px;
+}
+
+.comment-user{
+font-weight:600;
+font-size:13px;
+}
+
+.comment-text{
+margin-top:4px;
+line-height:1.5;
+}
+
+/* SIDEBAR */
+
+.rec{
+display:flex;
+gap:10px;
+margin-bottom:14px;
+}
+
+.thumbnail{
+width:168px;
+height:94px;
+background:#000;
+border-radius:8px;
+}
+
+.rec-info{
+font-size:14px;
+}
+
+.rec-title{
+font-weight:600;
+}
+
+.rec-channel{
+font-size:13px;
+color:#606060;
+margin-top:4px;
+}
+
+.rec-meta{
+font-size:12px;
+color:#606060;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+<div class="left-top">
+<div class="hamburger">☰</div>
+<div class="youtube-logo">YouTube</div>
+</div>
+
+<div class="right-top">
+<div>🔍</div>
+<div>⋮</div>
+<div class="signin">Sign in</div>
+</div>
+
+</div>
+
+<div class="page">
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+<div class="video-player">
+<div class="progress">
+<div class="progress-bar"></div>
+</div>
+</div>
+
+<div class="video-title">
+The Lost Broadcast of Vincent Whittman (1953)
+</div>
+
+<div class="channel-row">
+
+<div class="channel-left">
+
+<div class="channel-icon"></div>
+
+<div>
+<div class="channel-name">Archive Television</div>
+<div class="sub-count">421K subscribers</div>
+</div>
+
+</div>
+
+<div class="subscribe">
+Subscribe
+</div>
+
+</div>
+
+<div class="actions">
+
+<div class="button">👍 12K</div>
+<div class="button">👎</div>
+<div class="button">↗ Share</div>
+<div class="button">🔖 Save</div>
+<div class="button">⋯</div>
+
+</div>
+
+<div class="description">
+
+<div class="desc-meta">
+3,218,449 views • Oct 17, 2016
+</div>
+
+<div>
+This clip aired live in 1953 during an early-evening family slot.  
+<br><br>
+The footage was believed lost until a private collector digitized an old broadcast reel.
+<br><br>
+Viewer discretion is advised.
+</div>
+
+</div>
+
+<div class="comments-header">
+<div>4,821 Comments</div>
+<div class="sort">≡ Sort by</div>
+</div>
+
+<div class="add-comment">
+Add a comment...
+</div>
+
+<!-- COMMENTS -->
+
+<div class="comment">
+<div class="comment-avatar"></div>
+<div class="comment-body">
+<div class="comment-user">retroviewer91</div>
+<div class="comment-text">The audience laughing makes this ten times worse.</div>
+</div>
+</div>
+
+<div class="comment">
+<div class="comment-avatar"></div>
+<div class="comment-body">
+<div class="comment-user">AnalogGhost</div>
+<div class="comment-text">My grandfather swore he saw this live but nobody believed him.</div>
+</div>
+</div>
+
+<div class="comment">
+<div class="comment-avatar"></div>
+<div class="comment-body">
+<div class="comment-user">MothDaddy69</div>
+<div class="comment-text">How did this air on television???</div>
+</div>
+</div>
+
+<div class="comment">
+<div class="comment-avatar"></div>
+<div class="comment-body">
+<div class="comment-user">HellsHottestMediaOverlord</div>
+<div class="comment-text">The way he just folds. Television was better when it wasn't sanitized.</div>
+</div>
+</div>
+
+</div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="rec">
+<div class="thumbnail"></div>
+<div class="rec-info">
+<div class="rec-title">Weirdest Live TV Moments Ever Broadcast</div>
+<div class="rec-channel">RetroVision</div>
+<div class="rec-meta">1.2M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumbnail"></div>
+<div class="rec-info">
+<div class="rec-title">Lost 1950s Television Recordings</div>
+<div class="rec-channel">Broadcast Archive</div>
+<div class="rec-meta">854K views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumbnail"></div>
+<div class="rec-info">
+<div class="rec-title">The Dark History of Early Game Shows</div>
+<div class="rec-channel">MediaHistory</div>
+<div class="rec-meta">2.1M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumbnail"></div>
+<div class="rec-info">
+<div class="rec-title">10 TV Broadcasts That Should Never Have Aired</div>
+<div class="rec-channel">TVVault</div>
+<div class="rec-meta">3.4M views</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
