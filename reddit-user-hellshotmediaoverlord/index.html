@@ -92,6 +92,12 @@ border-top:1px solid #e6e6e6;
 display:none;
 }
 
+.down-arrow{
+font-size:18px;
+transform:rotate(90deg);
+display:inline-block;
+margin-right:6px;
+}
 /* STATS GRID */
 
 .about-grid{
@@ -231,7 +237,7 @@ box.style.display="block";
 <img class="reddit-logo" src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
 
 <div class="searchbar">
-Search Reddit
+Search u/HellsHottestMediaOverlord
 </div>
 
 <div class="open-app">
@@ -258,7 +264,7 @@ u/HellsHottestMediaOverlord
 
 <div class="about-header" onclick="toggleAbout()">
 <span>About</span>
-<span>▾</span>
+<span class="down-arrow">›</span>
 </div>
 
 <div class="about-content" id="aboutContent">
@@ -397,7 +403,7 @@ Frank Sinatra understood sequencing better in 1956 than most modern artists do t
 </div>
 
 <div class="view-more">
-View more activity
+<span class="down-arrow">›</span> View more activity
 </div>
 
 </div>
