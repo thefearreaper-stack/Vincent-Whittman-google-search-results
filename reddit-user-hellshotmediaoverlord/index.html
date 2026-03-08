@@ -1,0 +1,187 @@
+.profile-name{
+  font-size:28px;
+  font-weight:700;
+}
+
+.profile-user{
+  font-size:14px;
+  color:#878a8c;
+  margin-top:4px;
+}
+
+.about-box{
+  margin-top:20px;
+  border:1px solid #e6e6e6;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.about-header{
+  padding:16px;
+  display:flex;
+  justify-content:space-between;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.about-content{
+  padding:16px;
+  border-top:1px solid #e6e6e6;
+  display:none;
+}
+.trophies{
+  margin-top:20px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.trophy{
+  background:#f6f7f8;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:13px;
+}
+.profile-tabs{
+  display:flex;
+  gap:12px;
+  margin-top:25px;
+}
+
+.tab{
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  color:#878a8c;
+}
+
+.tab.active{
+  background:#f6f7f8;
+  color:#1c1c1c;
+  font-weight:600;
+}
+
+.activity{
+  padding:18px 0;
+  border-bottom:1px solid #e6e6e6;
+}
+
+.activity-meta{
+  font-size:13px;
+  color:#878a8c;
+}
+
+.activity-title{
+  font-size:14px;
+  margin-top:6px;
+  font-weight:600;
+}
+
+.activity-text{
+  margin-top:6px;
+  font-size:14px;
+}
+
+.view-more{
+  margin:30px auto;
+  text-align:center;
+  background:#ff4500;
+  color:white;
+  padding:10px 20px;
+  border-radius:999px;
+  width:180px;
+  font-weight:600;
+}
+
+<script>
+function toggleAbout(){
+  const box = document.getElementById("aboutContent");
+
+  if(box.style.display === "block"){
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+</script>
+
+<div class="header">
+
+<div class="topbar">
+
+<img class="reddit-logo" src="https://www.redditstatic.com/desktop2x/img/favicon/apple-icon-57x57.png">
+
+<div class="searchbar">
+Search Reddit
+</div>
+
+<div class="open-app">
+Log In
+</div>
+
+</div>
+</div>
+<div class="container">
+
+<div class="profile-name">
+HellsHottestMediaOverlord
+</div>
+
+<div class="profile-user">
+u/HellsHottestMediaOverlord
+</div>
+
+<div class="about-box">
+
+<div class="about-header" onclick="toggleAbout()">
+<span>About</span>
+<span class="arrow">▾</span>
+</div>
+
+<div class="about-content" id="aboutContent">
+
+<div>🔥 Karma: 4,298,221</div>
+<div>🗣 Contributions: 12,481 comments</div>
+<div>📅 Reddit age: 18 years</div>
+<div>📺 Active in: 94 communities</div>
+
+</div>
+
+</div>
+
+<div class="trophies">
+
+<div class="trophy">🏆 Controversial</div>
+<div class="trophy">🏆 OG Redditor</div>
+<div class="trophy">🏆 10 Year Club</div>
+<div class="trophy">🏆 Top Commenter</div>
+
+</div>
+
+<div class="profile-tabs">
+
+<div class="tab active">Overview</div>
+<div class="tab">Posts</div>
+<div class="tab">Comments</div>
+
+</div>
+
+<div class="activity">
+
+<div class="activity-meta">
+<b>HellsHottestMediaOverlord</b> commented 6 days ago
+</div>
+
+<div class="activity-title">
+r/CelebConspiracyTheories
+</div>
+
+<div class="activity-text">
+You idiots will believe anything if a documentary narrator whispers it slowly enough.
+</div>
+
+</div>
+
+<div class="view-more">
+View more activity
+</div>
