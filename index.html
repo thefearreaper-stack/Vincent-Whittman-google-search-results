@@ -244,7 +244,13 @@ color:#4d5156;
   justify-content: space-between;
   align-items: center;
 }
-
+   
+.people{
+font-size:20px;
+font-weight:500;
+margin-top:30px;
+margin-bottom:14px;
+}
 /* =========================================
    MORE RESULTS
 ========================================= */
@@ -334,17 +340,6 @@ text-decoration:underline;
   margin-right: 12px;
 }
 
-function toggleAnswer(card){
-
-let answer = card.nextElementSibling;
-
-if(answer.style.display === "block"){
-  answer.style.display = "none";
-}else{
-  answer.style.display = "block";
-}
-
-}
 </style>
 
 </head>
@@ -587,6 +582,18 @@ function startSearch() {
 function showMore() {
   document.getElementById("moreResult").style.display = "block";
   document.querySelector(".more").style.display = "none";
+}
+
+function toggleAnswer(card){
+
+let answer = card.nextElementSibling;
+
+if(answer.style.display === "block"){
+  answer.style.display = "none";
+}else{
+  answer.style.display = "block";
+}
+
 }
 </script>
 
