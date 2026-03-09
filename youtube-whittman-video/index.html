@@ -102,20 +102,32 @@ box-sizing:border-box;
 
 .progress{
 height:4px;
-background:#555;
+background:#3f3f3f;
 position:relative;
-margin-bottom:8px;
+margin-bottom:10px;
+border-radius:2px;
+overflow:hidden;
+}
+
+.progress-played{
+position:absolute;
+left:0;
+top:0;
+height:100%;
+width:0%;
+background:#ff0000;
 }
 
 .progress-dot{
-width:12px;
-height:12px;
+width:14px;
+height:14px;
 background:#ff0000;
 border-radius:50%;
 position:absolute;
-top:-4px;
+top:-5px;
 left:0;
 }
+
 
 .control-row{
 display:flex;
@@ -138,7 +150,10 @@ gap:14px;
 }
 
 .control-btn{
-font-size:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
 }
 
 /* TITLE */
@@ -369,6 +384,7 @@ Sign in
 <div class="controls">
 
 <div class="progress">
+<div class="progress-played"></div>
 <div class="progress-dot"></div>
 </div>
 
@@ -376,8 +392,16 @@ Sign in
 
 <div class="controls-left">
 
-<div class="control-btn">▶</div>
-<div class="control-btn">🔊</div>
+<div class="control-btn">
+<svg width="26" height="26" viewBox="0 0 24 24">
+<path fill="white" d="M8 5v14l11-7z"/>
+</svg>
+</div>
+<div class="control-btn">
+<svg width="26" height="26" viewBox="0 0 24 24">
+<path fill="white" d="M3 9v6h4l5 5V4L7 9H3z"/>
+</svg>
+</div>
 
 <div>0:00 / 48:55</div>
 
@@ -385,8 +409,16 @@ Sign in
 
 <div class="controls-right">
 
-<div class="control-btn">⚙</div>
-<div class="control-btn">⤢</div>
+<div class="control-btn">
+<svg width="24" height="24" viewBox="0 0 24 24">
+<path fill="white" d="M19.14,12.94a7.14,7.14,0,0,0,.05-.94,7.14,7.14,0,0,0-.05-.94l2.11-1.65a.5.5,0,0,0,.12-.65l-2-3.46a.5.5,0,0,0-.61-.22l-2.49,1a7.28,7.28,0,0,0-1.63-.94l-.38-2.65A.5.5,0,0,0,13.76,2H10.24a.5.5,0,0,0-.49.42L9.37,5.07a7.28,7.28,0,0,0-1.63.94l-2.49-1a.5.5,0,0,0-.61.22l-2,3.46a.5.5,0,0,0,.12.65L4.86,11.06a7.14,7.14,0,0,0-.05.94,7.14,7.14,0,0,0,.05.94L2.75,14.59a.5.5,0,0,0-.12.65l2,3.46a.5.5,0,0,0,.61.22l2.49-1a7.28,7.28,0,0,0,1.63.94l.38,2.65a.5.5,0,0,0,.49.42h3.52a.5.5,0,0,0,.49-.42l.38-2.65a7.28,7.28,0,0,0,1.63-.94l2.49,1a.5.5,0,0,0,.61-.22l2-3.46a.5.5,0,0,0-.12-.65ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
+</svg>
+</div>
+<div class="control-btn">
+<svg width="24" height="24" viewBox="0 0 24 24">
+<path fill="white" d="M7 14H5v5h5v-2H7v-3zm0-4h2V7h3V5H5v5zm10 7h-3v2h5v-5h-2v3zm-3-12v2h3v3h2V5h-5z"/>
+</svg>
+</div>
 
 </div>
 
