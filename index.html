@@ -63,17 +63,31 @@ body {
   margin-bottom: 25px;
 }
 
-.search-bar {
-  width: 60%;
-  max-width: 600px;
-  padding: 14px 20px;
-  font-size: 17px;
-  color: #202124;
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 1px 6px rgba(32,33,36,.28);
-  border: 1px solid #dadce0;
-  pointer-events: none;
+.search-bar{
+width:60%;
+max-width:600px;
+padding:14px 20px;
+font-size:17px;
+color:#202124;
+background:#fff;
+border-radius:24px;
+box-shadow:0 1px 6px rgba(32,33,36,.28);
+border:1px solid #dadce0;
+
+display:flex;
+align-items:center;
+gap:10px;
+
+pointer-events:none;
+}
+
+.search-icon{
+width:20px;
+height:20px;
+}
+
+.search-text{
+color:#202124;
 }
 
 .search-button {
@@ -233,16 +247,36 @@ color:#4d5156;
   margin-bottom:60px;
 }
 
-.card {
-  padding: 16px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  border-radius: 12px;
-  background: #f8f9fa;
-  box-shadow: 0 1px 3px rgba(0,0,0,.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card{
+padding:16px;
+margin-bottom:10px;
+font-size:15px;
+border-radius:12px;
+background:#f8f9fa;
+box-shadow:0 1px 3px rgba(0,0,0,.1);
+display:flex;
+justify-content:space-between;
+align-items:center;
+cursor:pointer;
+}
+
+.arrow{
+width:32px;
+height:32px;
+border-radius:50%;
+background:#e8eaed;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:transform 0.25s;
+}
+
+.arrow svg{
+width:18px;
+height:18px;
+stroke:#5f6368;
+stroke-width:2.5;
+fill:none;
 }
    
 .people{
@@ -364,7 +398,16 @@ text-decoration:underline;
      SEARCH AREA
 ======================= -->
 <div class="search-area">
-  <span class="search-bar">🔍 Vincent Whittman</span>
+<div class="search-bar">
+<svg class="search-icon" viewBox="0 0 24 24">
+<path fill="#5f6368" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 
+6.5 6.5 0 109.5 16a6.471 6.471 0 004.23-1.57l.27.28v.79L20 
+21.49 21.49 20l-5.99-6zm-6 0C7.01 14 5 11.99 5 
+9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+</svg>
+
+<span class="search-text">Vincent Whittman</span>
+</div>
   <button class="search-button" onclick="startSearch()">Search</button>
 </div>
 
@@ -478,8 +521,12 @@ Source:
 <div class="people-questions">
 
 <div class="card" onclick="toggleAnswer(this)">
-  <div>How did Vincent Whittman die?</div>
-  <span>▼</span>
+<div>How did Vincent Whittman die?</div>
+<div class="arrow">
+<svg viewBox="0 0 24 24">
+<path d="M7 10l5 5 5-5"/>
+</svg>
+</div>
 </div>
 <div class="answer">
 Whittman died in 1958 while serving a sentence at Sing Sing Correctional Facility following his conviction for the televised killing that ended his career.
@@ -587,11 +634,14 @@ function showMore() {
 function toggleAnswer(card){
 
 let answer = card.nextElementSibling;
+let arrow = card.querySelector(".arrow");
 
 if(answer.style.display === "block"){
   answer.style.display = "none";
+  arrow.style.transform = "rotate(0deg)";
 }else{
   answer.style.display = "block";
+  arrow.style.transform = "rotate(180deg)";
 }
 
 }
