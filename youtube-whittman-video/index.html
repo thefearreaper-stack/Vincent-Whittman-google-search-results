@@ -352,28 +352,29 @@ display:none;
 display:flex;
 align-items:center;
 gap:6px;
-color:#065fd4;
+color:#0f0f0f;
 font-size:14px;
 font-weight:500;
 cursor:pointer;
-margin:6px 0 10px 48px;
+margin:6px 0 10px 40px;
 }
 
 .reply-label svg{
 width:18px;
 height:18px;
+margin-left:4px;
 transition:transform 0.2s;
 }
 
 .reply-container{
 display:none;
-margin-left:48px;
+margin-left:40px;
 margin-top:8px;
 }
 
 .reply{
 display:flex;
-gap:12px;
+gap:10px;
 margin-bottom:14px;
 }
 
@@ -398,7 +399,7 @@ margin-top:3px;
 display:flex;
 align-items:center;
 gap:6px;
-color:#065fd4;
+color:#0f0f0f;
 font-size:14px;
 font-weight:500;
 margin-top:6px;
@@ -407,9 +408,10 @@ margin-top:6px;
 .more-replies svg{
 width:18px;
 height:18px;
+margin-left:4px;
 }
 
-/* show replies when clicked */
+/* reveal replies */
 
 .reply-toggle:checked + .reply-label svg{
 transform:rotate(180deg);
@@ -661,13 +663,10 @@ Thank you for watching!! As always, viewer discretion is advised.
 <input type="checkbox" id="reply1" class="reply-toggle">
 
 <label for="reply1" class="reply-label">
-
-<svg viewBox="0 0 24 24">
-<path fill="#065fd4" d="M7 10l5 5 5-5z"/>
-</svg>
-
 12 replies
-
+<svg viewBox="0 0 24 24">
+<path fill="#0f0f0f" d="M6 9l6 6 6-6"/>
+</svg>
 </label>
 
 <div class="reply-container">
@@ -697,13 +696,10 @@ Thank you for watching!! As always, viewer discretion is advised.
 </div>
 
 <div class="more-replies">
-
-<svg viewBox="0 0 24 24">
-<path fill="#065fd4" d="M7 10l5 5 5-5z"/>
-</svg>
-
 Show more replies
-
+<svg viewBox="0 0 24 24">
+<path fill="#0f0f0f" d="M6 9l6 6 6-6"/>
+</svg>
 </div>
 
 </div>
