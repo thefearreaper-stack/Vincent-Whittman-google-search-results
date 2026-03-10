@@ -248,6 +248,28 @@ height:18px;
 background:#d9d9d9;
 }
 
+.button{
+display:flex;
+align-items:center;
+gap:6px;
+background:#f2f2f2;
+padding:8px 14px;
+border-radius:999px;
+cursor:pointer;
+font-size:14px;
+}
+
+.button:hover{
+background:#e5e5e5;
+}
+
+.button.icon{
+padding:8px;
+width:36px;
+height:36px;
+justify-content:center;
+}
+  
 /* DESCRIPTION */
 
 .description{
@@ -368,17 +390,18 @@ max-width:100%;
 
 <div class="right-top">
 
-<div class="icon-btn">
 <svg viewBox="0 0 24 24">
-<path d="M17 10.5V7c0-1.1-.9-2-2-2H5C3.9 5 3 5.9 3 7v10c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-3.5l4 4v-11l-4 4z"/>
+<path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 
+6.5 6.5 0 109.5 16a6.471 6.471 0 004.23-1.57l.27.28v.79L20 
+21.49 21.49 20l-5.99-6zm-6 0C7.01 14 5 11.99 5 
+9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
 </svg>
-</div>
 
-<div class="icon-btn">
 <svg viewBox="0 0 24 24">
-<path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V11c0-3.1-1.6-5.6-4.5-6.3V4a1.5 1.5 0 10-3 0v.7C7.6 5.4 6 7.9 6 11v5l-2 2v1h16v-1l-2-2z"/>
+<circle cx="12" cy="5" r="2"/>
+<circle cx="12" cy="12" r="2"/>
+<circle cx="12" cy="19" r="2"/>
 </svg>
-</div>
 
 <div class="signin">
 <svg viewBox="0 0 24 24">
@@ -469,7 +492,8 @@ The 'God of Entertainment' Serial Killer (Vincent Whittman)
 <div class="button like-box">
 
 <svg viewBox="0 0 24 24">
-<path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6l1-5-.03-.32c-.08-.41-.3-.77-.6-1.04L14 1 7.59 7.41C7.22 7.78 7 8.3 7 8.83V19c0 1.1.9 2 2 2h7c.82 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
+<path d="M1 21h4V9H1v12zm21-11c0-1.1-.9-2-2-2h-6l1-5V2l-7 
+7v12h9c.82 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/>
 </svg>
 
 <span>12K</span>
@@ -477,26 +501,28 @@ The 'God of Entertainment' Serial Killer (Vincent Whittman)
 <div class="divider"></div>
 
 <svg viewBox="0 0 24 24">
-<path d="M15 3H8c-.82 0-1.54.5-1.84 1.22L3.14 11.27c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2h6l-1 5 .03.32c.08.41.3.77.6 1.04L12 23l6.41-6.41c.37-.37.59-.89.59-1.42V5c0-1.1-.9-2-2-2z"/>
+<path d="M15 3H6c-.82 0-1.54.5-1.84 1.22L1.14 11.27c-.09.23-.14.47-.14.73v2c0 
+1.1.9 2 2 2h6l-1 5v1l7-7V5c0-1.1-.9-2-2-2z"/>
 </svg>
 
 </div>
 
 <div class="button">
 <svg viewBox="0 0 24 24">
-<path d="M15 8V5l7 7-7 7v-3c-5 0-8 1.5-10 5 1-5 4-10 10-10z"/>
+<path d="M15 5l7 7-7 7v-4c-4 0-7 1-9 3 1-5 4-9 9-9V5z"/>
 </svg>
 Share
 </div>
 
 <div class="button">
 <svg viewBox="0 0 24 24">
-<path d="M17 3H5c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+<path d="M14 10H3v2h11v-2zm0-4H3v2h11V6zm0 8H3v2h11v-2zm7 
+-4l-3 3-3-3h2V6h2v4h2z"/>
 </svg>
 Save
 </div>
 
-<div class="button">
+<div class="button icon">
 <svg viewBox="0 0 24 24">
 <circle cx="12" cy="5" r="2"/>
 <circle cx="12" cy="12" r="2"/>
