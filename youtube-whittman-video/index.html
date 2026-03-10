@@ -40,7 +40,7 @@ height:20px;
 .right-top{
 display:flex;
 align-items:center;
-gap:18px;
+gap:16px;
 }
 
 .icon-btn{
@@ -52,11 +52,11 @@ justify-content:center;
 }
 
 .icon-btn svg{
-width:22px;
-height:22px;
+width:24px;
+height:24px;
 stroke:#0f0f0f;
-fill:none;
 stroke-width:2;
+fill:none;
 }
 
 /* SIGN IN */
@@ -65,8 +65,8 @@ stroke-width:2;
 display:flex;
 align-items:center;
 gap:8px;
-border:1px solid #d3d3d3;
-padding:6px 12px;
+border:1px solid #0f0f0f;
+padding:6px 14px;
 border-radius:999px;
 font-weight:500;
 font-size:14px;
@@ -77,8 +77,8 @@ color:#0f0f0f;
 width:22px;
 height:22px;
 stroke:#0f0f0f;
-fill:none;
 stroke-width:2;
+fill:none;
 }
 
 /* PAGE LAYOUT */
@@ -157,8 +157,8 @@ gap:14px;
 }
 
 .control-btn svg{
-width:22px;
-height:22px;
+width:24px;
+height:24px;
 fill:white;
 }
 
@@ -225,7 +225,7 @@ margin:14px 0;
 .button{
 display:flex;
 align-items:center;
-gap:8px;
+gap:6px;
 background:#f2f2f2;
 padding:8px 14px;
 border-radius:999px;
@@ -233,11 +233,11 @@ font-size:14px;
 }
 
 .button svg{
-width:20px;
-height:20px;
+width:22px;
+height:22px;
 stroke:#0f0f0f;
-fill:none;
 stroke-width:2;
+fill:none;
 }
 
 .like-box{
@@ -333,6 +333,10 @@ border-radius:8px;
 flex-shrink:0;
 }
 
+.rec-info{
+font-size:14px;
+}
+
 .rec-title{
 font-weight:600;
 }
@@ -345,6 +349,11 @@ color:#606060;
 .rec-meta{
 font-size:12px;
 color:#606060;
+}
+
+@media (max-width:1100px){
+.sidebar{display:none;}
+.main{max-width:100%;}
 }
 
 </style>
@@ -364,25 +373,24 @@ color:#606060;
 <div class="icon-btn">
 <svg viewBox="0 0 24 24">
 <circle cx="11" cy="11" r="7"></circle>
-<line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+<line x1="20" y1="20" x2="16.5" y2="16.5"></line>
 </svg>
 </div>
 
 <div class="icon-btn">
 <svg viewBox="0 0 24 24">
-<circle cx="12" cy="5" r="1.5"/>
-<circle cx="12" cy="12" r="1.5"/>
-<circle cx="12" cy="19" r="1.5"/>
+<circle cx="12" cy="5" r="1.8"></circle>
+<circle cx="12" cy="12" r="1.8"></circle>
+<circle cx="12" cy="19" r="1.8"></circle>
 </svg>
 </div>
 
 <div class="signin">
-
 <svg viewBox="0 0 24 24">
-<circle cx="12" cy="8" r="4"/>
-<path d="M4 20c1.5-4 14.5-4 16 0"/>
+<circle cx="12" cy="8" r="4"></circle>
+<path d="M4 20c2-4 14-4 16 0"></path>
+<circle cx="12" cy="12" r="10"></circle>
 </svg>
-
 Sign in
 </div>
 
@@ -406,11 +414,15 @@ Sign in
 <div class="controls-left">
 
 <div class="control-btn">
-<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg>
+<svg viewBox="0 0 24 24">
+<polygon points="8,5 19,12 8,19"></polygon>
+</svg>
 </div>
 
 <div class="control-btn">
-<svg viewBox="0 0 24 24"><polygon points="3,9 7,9 12,5 12,19 7,15 3,15"></polygon></svg>
+<svg viewBox="0 0 24 24">
+<polygon points="3,9 7,9 12,5 12,19 7,15 3,15"></polygon>
+</svg>
 </div>
 
 <div>0:00 / 48:55</div>
@@ -420,15 +432,8 @@ Sign in
 <div class="controls-right">
 
 <div class="control-btn">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle></svg>
-</div>
-
-<div class="control-btn">
 <svg viewBox="0 0 24 24">
-<polyline points="15 3 21 3 21 9"/>
-<polyline points="9 21 3 21 3 15"/>
-<line x1="21" y1="3" x2="14" y2="10"/>
-<line x1="3" y1="21" x2="10" y2="14"/>
+<rect x="4" y="4" width="16" height="16"></rect>
 </svg>
 </div>
 
@@ -443,7 +448,6 @@ The 'God of Entertainment' Serial Killer (Vincent Whittman)
 </div>
 
 <div class="channel-row">
-
 <div class="channel-left">
 
 <div class="channel-avatar"></div>
@@ -456,7 +460,6 @@ The 'God of Entertainment' Serial Killer (Vincent Whittman)
 <div class="subscribe">Subscribe</div>
 
 </div>
-
 </div>
 
 <div class="actions">
@@ -464,7 +467,7 @@ The 'God of Entertainment' Serial Killer (Vincent Whittman)
 <div class="button like-box">
 
 <svg viewBox="0 0 24 24">
-<polyline points="14 9 14 5 7 12 14 19 14 15"></polyline>
+<path d="M14 9V5a3 3 0 0 0-3-3l-1 7H4v11h11l5-8v-3z"></path>
 </svg>
 
 <span>12K</span>
@@ -472,556 +475,98 @@ The 'God of Entertainment' Serial Killer (Vincent Whittman)
 <div class="divider"></div>
 
 <svg viewBox="0 0 24 24">
-<polyline points="10 15 10 19 17 12 10 5 10 9"></polyline>
+<path d="M10 15v4a3 3 0 0 0 3 3l1-7h6V4H9L4 12v3z"></path>
 </svg>
 
 </div>
 
 <div class="button">
-
 <svg viewBox="0 0 24 24">
-<circle cx="18" cy="5" r="3"/>
-<circle cx="6" cy="12" r="3"/>
-<circle cx="18" cy="19" r="3"/>
-<line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/>
-<line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/>
+<polyline points="15 8 19 12 15 16"></polyline>
+<line x1="19" y1="12" x2="5" y2="12"></line>
 </svg>
-
 Share
-
 </div>
 
 <div class="button">
-
 <svg viewBox="0 0 24 24">
-<path d="M6 3h12v18l-6-4-6 4z"></path>
+<path d="M5 3h14v18l-7-4-7 4z"></path>
 </svg>
-
 Save
-
 </div>
 
 <div class="button icon">
-
 <svg viewBox="0 0 24 24">
-<circle cx="5" cy="12" r="1.8"/>
-<circle cx="12" cy="12" r="1.8"/>
-<circle cx="19" cy="12" r="1.8"/>
-</svg>
-
-</div>
-
-</div><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>YouTube</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Roboto, Arial, sans-serif;
-background:#ffffff;
-color:#0f0f0f;
-}
-
-/* TOP BAR */
-
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px 16px;
-border-bottom:1px solid #e5e5e5;
-}
-
-.left-top{
-display:flex;
-align-items:center;
-gap:18px;
-}
-
-.hamburger{
-font-size:22px;
-}
-
-.logo{
-height:20px;
-}
-
-.right-top{
-display:flex;
-align-items:center;
-gap:18px;
-}
-
-.icon-btn{
-width:40px;
-height:40px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.icon-btn svg{
-width:22px;
-height:22px;
-stroke:#0f0f0f;
-fill:none;
-stroke-width:2;
-}
-
-/* SIGN IN */
-
-.signin{
-display:flex;
-align-items:center;
-gap:8px;
-border:1px solid #d3d3d3;
-padding:6px 12px;
-border-radius:999px;
-font-weight:500;
-font-size:14px;
-color:#0f0f0f;
-}
-
-.signin svg{
-width:22px;
-height:22px;
-stroke:#0f0f0f;
-fill:none;
-stroke-width:2;
-}
-
-/* PAGE LAYOUT */
-
-.page{
-display:flex;
-max-width:1400px;
-margin:24px auto;
-gap:28px;
-padding:0 20px;
-}
-
-.main{
-flex:1;
-max-width:900px;
-}
-
-.sidebar{
-width:402px;
-}
-
-/* VIDEO PLAYER */
-
-.video{
-background:black;
-width:100%;
-height:506px;
-border-radius:12px;
-position:relative;
-}
-
-.controls{
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-padding:10px;
-box-sizing:border-box;
-}
-
-.progress{
-height:4px;
-background:#555;
-position:relative;
-margin-bottom:8px;
-}
-
-.progress-dot{
-width:12px;
-height:12px;
-background:#ff0000;
-border-radius:50%;
-position:absolute;
-top:-4px;
-left:0;
-}
-
-.control-row{
-display:flex;
-justify-content:space-between;
-align-items:center;
-color:white;
-font-size:14px;
-}
-
-.controls-left{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.controls-right{
-display:flex;
-align-items:center;
-gap:14px;
-}
-
-.control-btn svg{
-width:22px;
-height:22px;
-fill:white;
-}
-
-/* TITLE */
-
-.video-title{
-font-size:22px;
-font-weight:600;
-margin:14px 0;
-}
-
-/* CHANNEL ROW */
-
-.channel-row{
-display:flex;
-align-items:center;
-margin-bottom:12px;
-}
-
-.channel-left{
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.channel-avatar{
-width:40px;
-height:40px;
-border-radius:50%;
-background:#ddd;
-}
-
-.channel-meta{
-display:flex;
-flex-direction:column;
-}
-
-.channel-name{
-font-weight:600;
-}
-
-.sub-count{
-font-size:13px;
-color:#606060;
-}
-
-.subscribe{
-background:#0f0f0f;
-color:white;
-padding:10px 16px;
-border-radius:999px;
-font-weight:600;
-margin-left:14px;
-}
-
-/* ACTION BUTTONS */
-
-.actions{
-display:flex;
-gap:10px;
-margin:14px 0;
-}
-
-.button{
-display:flex;
-align-items:center;
-gap:8px;
-background:#f2f2f2;
-padding:8px 14px;
-border-radius:999px;
-font-size:14px;
-}
-
-.button svg{
-width:20px;
-height:20px;
-stroke:#0f0f0f;
-fill:none;
-stroke-width:2;
-}
-
-.like-box{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.divider{
-width:1px;
-height:18px;
-background:#d9d9d9;
-}
-
-.button.icon{
-padding:8px;
-width:36px;
-height:36px;
-justify-content:center;
-}
-
-/* DESCRIPTION */
-
-.description{
-background:#f2f2f2;
-padding:14px;
-border-radius:12px;
-margin-top:10px;
-}
-
-.desc-meta{
-font-weight:600;
-margin-bottom:8px;
-}
-
-/* COMMENTS */
-
-.comments-header{
-display:flex;
-gap:18px;
-margin-top:24px;
-font-size:16px;
-}
-
-.sort{
-color:#606060;
-font-size:14px;
-}
-
-.add-comment{
-padding:14px 0;
-border-bottom:1px solid #e5e5e5;
-color:#606060;
-margin-bottom:18px;
-}
-
-.comment{
-display:flex;
-gap:12px;
-margin-bottom:22px;
-}
-
-.comment-avatar{
-width:36px;
-height:36px;
-background:#ddd;
-border-radius:50%;
-}
-
-.comment-user{
-font-weight:600;
-font-size:13px;
-}
-
-.comment-text{
-margin-top:4px;
-font-size:14px;
-}
-
-/* SIDEBAR */
-
-.rec{
-display:flex;
-gap:10px;
-margin-bottom:12px;
-}
-
-.thumb{
-width:168px;
-height:94px;
-background:black;
-border-radius:8px;
-flex-shrink:0;
-}
-
-.rec-title{
-font-weight:600;
-}
-
-.rec-channel{
-font-size:13px;
-color:#606060;
-}
-
-.rec-meta{
-font-size:12px;
-color:#606060;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="topbar">
-
-<div class="left-top">
-<div class="hamburger">☰</div>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg">
-</div>
-
-<div class="right-top">
-
-<div class="icon-btn">
-<svg viewBox="0 0 24 24">
-<circle cx="11" cy="11" r="7"></circle>
-<line x1="16.5" y1="16.5" x2="21" y2="21"></line>
-</svg>
-</div>
-
-<div class="icon-btn">
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="5" r="1.5"/>
-<circle cx="12" cy="12" r="1.5"/>
-<circle cx="12" cy="19" r="1.5"/>
-</svg>
-</div>
-
-<div class="signin">
-
-<svg viewBox="0 0 24 24">
-<circle cx="12" cy="8" r="4"/>
-<path d="M4 20c1.5-4 14.5-4 16 0"/>
-</svg>
-
-Sign in
-</div>
-
-</div>
-</div>
-
-<div class="page">
-
-<div class="main">
-
-<div class="video">
-
-<div class="controls">
-
-<div class="progress">
-<div class="progress-dot"></div>
-</div>
-
-<div class="control-row">
-
-<div class="controls-left">
-
-<div class="control-btn">
-<svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg>
-</div>
-
-<div class="control-btn">
-<svg viewBox="0 0 24 24"><polygon points="3,9 7,9 12,5 12,19 7,15 3,15"></polygon></svg>
-</div>
-
-<div>0:00 / 48:55</div>
-
-</div>
-
-<div class="controls-right">
-
-<div class="control-btn">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle></svg>
-</div>
-
-<div class="control-btn">
-<svg viewBox="0 0 24 24">
-<polyline points="15 3 21 3 21 9"/>
-<polyline points="9 21 3 21 3 15"/>
-<line x1="21" y1="3" x2="14" y2="10"/>
-<line x1="3" y1="21" x2="10" y2="14"/>
+<circle cx="6" cy="12" r="1.8"></circle>
+<circle cx="12" cy="12" r="1.8"></circle>
+<circle cx="18" cy="12" r="1.8"></circle>
 </svg>
 </div>
 
 </div>
 
-</div>
-</div>
-</div>
+<div class="description">
 
-<div class="video-title">
-The 'God of Entertainment' Serial Killer (Vincent Whittman)
+<div class="desc-meta">
+725,449 views • Oct 17, 2023
 </div>
 
-<div class="channel-row">
+Today's solved true crime case is on Vincent Whittman aka the God of Entertainment aka one of the scariest fucking men I've ever read about in my life.<br><br>
 
-<div class="channel-left">
+Listen to my true crime episodes as a podcast:
+https://bit.ly/3ftkV15<br><br>
 
-<div class="channel-avatar"></div>
+Request a case: https://www.videoask.com/voxishot69
 
-<div class="channel-meta">
-<div class="channel-name">True Crime with Niamh Heath</div>
-<div class="sub-count">421K subscribers</div>
-</div>
-
-<div class="subscribe">Subscribe</div>
+<br><br>
+Thank you for watching!! As always, viewer discretion is advised.
 
 </div>
 
+<div class="comments-header">
+<div>4,821 Comments</div>
+<div class="sort">☰ Sort by</div>
 </div>
 
-<div class="actions">
+<div class="add-comment">Add a comment...</div>
 
-<div class="button like-box">
-
-<svg viewBox="0 0 24 24">
-<polyline points="14 9 14 5 7 12 14 19 14 15"></polyline>
-</svg>
-
-<span>12K</span>
-
-<div class="divider"></div>
-
-<svg viewBox="0 0 24 24">
-<polyline points="10 15 10 19 17 12 10 5 10 9"></polyline>
-</svg>
-
+<div class="comment">
+<div class="comment-avatar"></div>
+<div>
+<div class="comment-user">ariszle</div>
+<div class="comment-text">????.</div>
+</div>
 </div>
 
-<div class="button">
-
-<svg viewBox="0 0 24 24">
-<circle cx="18" cy="5" r="3"/>
-<circle cx="6" cy="12" r="3"/>
-<circle cx="18" cy="19" r="3"/>
-<line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/>
-<line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/>
-</svg>
-
-Share
-
+<div class="comment">
+<div class="comment-avatar"></div>
+<div>
+<div class="comment-user">AnOperaGhost</div>
+<div class="comment-text">?????.</div>
+</div>
 </div>
 
-<div class="button">
-
-<svg viewBox="0 0 24 24">
-<path d="M6 3h12v18l-6-4-6 4z"></path>
-</svg>
-
-Save
+<div class="comment">
+<div class="comment-avatar"></div>
+<div>
+<div class="comment-user">SpookyAlchemist3952</div>
+<div class="comment-text">???</div>
+</div>
+</div>
 
 </div>
 
-<div class="button icon">
+<div class="sidebar">
 
-<svg viewBox="0 0 24 24">
-<circle cx="5" cy="12" r="1.8"/>
-<circle cx="12" cy="12" r="1.8"/>
-<circle cx="19" cy="12" r="1.8"/>
-</svg>
+<div class="rec"><div class="thumb"></div><div class="rec-info"><div class="rec-title">Weirdest Live TV Moments Ever Broadcast</div><div class="rec-channel">RetroVision</div><div class="rec-meta">1.2M views</div></div></div>
+<div class="rec"><div class="thumb"></div><div class="rec-info"><div class="rec-title">Lost 1950s Television Recordings</div><div class="rec-channel">Broadcast Archive</div><div class="rec-meta">854K views</div></div></div>
+<div class="rec"><div class="thumb"></div><div class="rec-info"><div class="rec-title">The Dark History of Early Game Shows</div><div class="rec-channel">MediaHistory</div><div class="rec-meta">2.1M views</div></div></div>
+<div class="rec"><div class="thumb"></div><div class="rec-info"><div class="rec-title">10 TV Broadcasts That Should Never Have Aired</div><div class="rec-channel">TVVault</div><div class="rec-meta">3.4M views</div></div></div>
+<div class="rec"><div class="thumb"></div><div class="rec-info"><div class="rec-title">Unsolved Television Broadcast Mysteries</div><div class="rec-channel">SignalLost</div><div class="rec-meta">987K views</div></div></div>
 
 </div>
 
 </div>
+
+</body>
+</html>
