@@ -349,26 +349,30 @@ display:none;
 }
 
 .reply-label{
-display:flex;
+display:inline-flex;
 align-items:center;
 gap:6px;
-color:#0f0f0f;
 font-size:14px;
 font-weight:500;
 cursor:pointer;
-margin:6px 0 10px 40px;
+margin:6px 0 10px 0;
+padding:6px 10px;
+border-radius:18px;
+}
+
+.reply-label:hover{
+background:#f2f2f2;
 }
 
 .reply-label svg{
-width:18px;
-height:18px;
+width:16px;
+height:16px;
 margin-left:4px;
 transition:transform 0.2s;
 }
 
 .reply-container{
 display:none;
-margin-left:40px;
 margin-top:8px;
 }
 
@@ -396,18 +400,23 @@ margin-top:3px;
 }
 
 .more-replies{
-display:flex;
+display:inline-flex;
 align-items:center;
 gap:6px;
-color:#0f0f0f;
 font-size:14px;
 font-weight:500;
+padding:6px 10px;
+border-radius:18px;
 margin-top:6px;
 }
 
+.more-replies:hover{
+background:#f2f2f2;
+}
+
 .more-replies svg{
-width:18px;
-height:18px;
+width:16px;
+height:16px;
 margin-left:4px;
 }
 
@@ -665,7 +674,12 @@ Thank you for watching!! As always, viewer discretion is advised.
 <label for="reply1" class="reply-label">
 12 replies
 <svg viewBox="0 0 24 24">
-<path fill="#0f0f0f" d="M6 9l6 6 6-6"/>
+<polyline points="6,9 12,15 18,9"
+stroke="#0f0f0f"
+stroke-width="2.5"
+fill="none"
+stroke-linecap="round"
+stroke-linejoin="round"/>
 </svg>
 </label>
 
@@ -698,7 +712,12 @@ Thank you for watching!! As always, viewer discretion is advised.
 <div class="more-replies">
 Show more replies
 <svg viewBox="0 0 24 24">
-<path fill="#0f0f0f" d="M6 9l6 6 6-6"/>
+<polyline points="6,9 12,15 18,9"
+stroke="#0f0f0f"
+stroke-width="2.5"
+fill="none"
+stroke-linecap="round"
+stroke-linejoin="round"/>
 </svg>
 </div>
 
