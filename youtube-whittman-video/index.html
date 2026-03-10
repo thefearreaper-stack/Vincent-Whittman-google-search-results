@@ -342,6 +342,83 @@ margin-top:4px;
 font-size:14px;
 }
 
+/* REPLIES */
+
+.reply-toggle{
+display:none;
+}
+
+.reply-label{
+display:flex;
+align-items:center;
+gap:6px;
+color:#065fd4;
+font-size:14px;
+font-weight:500;
+cursor:pointer;
+margin:6px 0 10px 48px;
+}
+
+.reply-label svg{
+width:18px;
+height:18px;
+transition:transform 0.2s;
+}
+
+.reply-container{
+display:none;
+margin-left:48px;
+margin-top:8px;
+}
+
+.reply{
+display:flex;
+gap:12px;
+margin-bottom:14px;
+}
+
+.reply-avatar{
+width:28px;
+height:28px;
+background:#ddd;
+border-radius:50%;
+}
+
+.reply-user{
+font-weight:600;
+font-size:13px;
+}
+
+.reply-text{
+font-size:14px;
+margin-top:3px;
+}
+
+.more-replies{
+display:flex;
+align-items:center;
+gap:6px;
+color:#065fd4;
+font-size:14px;
+font-weight:500;
+margin-top:6px;
+}
+
+.more-replies svg{
+width:18px;
+height:18px;
+}
+
+/* show replies when clicked */
+
+.reply-toggle:checked + .reply-label svg{
+transform:rotate(180deg);
+}
+
+.reply-toggle:checked ~ .reply-container{
+display:block;
+}
+  
 /* SIDEBAR */
 
 .rec{
@@ -575,9 +652,62 @@ Thank you for watching!! As always, viewer discretion is advised.
 
 <div class="comment">
 <div class="comment-avatar"></div>
+
 <div>
+
 <div class="comment-user">ariszle</div>
 <div class="comment-text">????.</div>
+
+<input type="checkbox" id="reply1" class="reply-toggle">
+
+<label for="reply1" class="reply-label">
+
+<svg viewBox="0 0 24 24">
+<path fill="#065fd4" d="M7 10l5 5 5-5z"/>
+</svg>
+
+12 replies
+
+</label>
+
+<div class="reply-container">
+
+<div class="reply">
+<div class="reply-avatar"></div>
+<div>
+<div class="reply-user">dead_air</div>
+<div class="reply-text">I swear I saw this broadcast once.</div>
+</div>
+</div>
+
+<div class="reply">
+<div class="reply-avatar"></div>
+<div>
+<div class="reply-user">AnalogSignal</div>
+<div class="reply-text">The ending still creeps me out.</div>
+</div>
+</div>
+
+<div class="reply">
+<div class="reply-avatar"></div>
+<div>
+<div class="reply-user">nightshiftviewer</div>
+<div class="reply-text">That last frame wasn't supposed to air.</div>
+</div>
+</div>
+
+<div class="more-replies">
+
+<svg viewBox="0 0 24 24">
+<path fill="#065fd4" d="M7 10l5 5 5-5z"/>
+</svg>
+
+Show more replies
+
+</div>
+
+</div>
+
 </div>
 </div>
 
