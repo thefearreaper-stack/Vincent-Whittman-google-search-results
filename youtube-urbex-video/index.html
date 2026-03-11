@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YouTube</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Roboto, Arial, sans-serif;
+background:#ffffff;
+color:#0f0f0f;
+}
+
+/* TOP BAR */
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 16px;
+border-bottom:1px solid #e5e5e5;
+}
+
+.left-top{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.hamburger{
+font-size:22px;
+}
+
+.logo{
+height:20px;
+}
+
+.right-top{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.search{
+font-size:20px;
+}
+
+.menu-dots{
+font-size:22px;
+}
+
+.icon-btn{
+width:40px;
+height:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+cursor:pointer;
+}
+
+.icon-btn:hover{
+background:#f2f2f2;
+}
+
+.icon-btn svg{
+width:24px;
+height:24px;
+fill:#0f0f0f;
+}
+
+.signin svg{
+width:18px;
+height:18px;
+margin-right:6px;
+fill:#065fd4;
+}
+
+.signin{
+display:flex;
+align-items:center;
+gap:6px;
+border:1px solid #d3d3d3;
+padding:6px 12px;
+border-radius:999px;
+color:#065fd4;
+font-weight:500;
+font-size:14px;
+cursor:pointer;
+}
+
+.signin:hover{
+background:#f2f2f2;
+}
+
+/* PAGE LAYOUT */
+
+.page{
+display:flex;
+max-width:1400px;
+margin:24px auto;
+gap:28px;
+padding:0 20px;
+}
+
+.main{
+flex:1;
+max-width:900px;
+}
+
+.sidebar{
+width:402px;
+}
+
+/* VIDEO PLAYER */
+
+.video{
+background:black;
+width:100%;
+height:506px;
+border-radius:12px;
+position:relative;
+}
+
+.controls{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:10px;
+box-sizing:border-box;
+}
+
+.progress{
+height:4px;
+background:#555;
+position:relative;
+margin-bottom:8px;
+}
+
+.progress-dot{
+width:12px;
+height:12px;
+background:#ff0000;
+border-radius:50%;
+position:absolute;
+top:-4px;
+left:0;
+}
+
+
+.control-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+font-size:14px;
+}
+
+.controls-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.controls-right{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.control-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+/* TITLE */
+
+.video-title{
+font-size:22px;
+font-weight:600;
+margin:14px 0;
+}
+
+/* CHANNEL ROW */
+
+.channel-row{
+display:flex;
+align-items:center;
+margin-bottom:12px;
+}
+
+.channel-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.channel-avatar{
+width:40px;
+height:40px;
+border-radius:50%;
+background:#ddd;
+}
+
+.channel-meta{
+display:flex;
+flex-direction:column;
+}
+
+.channel-name{
+font-weight:600;
+}
+
+.sub-count{
+font-size:13px;
+color:#606060;
+}
+
+.subscribe{
+background:#0f0f0f;
+color:white;
+padding:10px 16px;
+border-radius:999px;
+font-weight:600;
+margin-left:14px;
+}
+
+/* ACTION BUTTONS */
+
+.actions{
+display:flex;
+gap:10px;
+margin:14px 0;
+}
+
+.button svg{
+width:20px;
+height:20px;
+fill:#0f0f0f;
+}
+
+.button span{
+margin-left:4px;
+margin-right:4px;
+}
+
+.button:hover{
+background:#e5e5e5;
+}
+
+.like-box{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.divider{
+width:1px;
+height:18px;
+background:#d9d9d9;
+}
+
+.button{
+display:flex;
+align-items:center;
+gap:6px;
+background:#f2f2f2;
+padding:8px 14px;
+border-radius:999px;
+cursor:pointer;
+font-size:14px;
+}
+
+
+.button.icon{
+padding:8px;
+width:36px;
+height:36px;
+justify-content:center;
+}
+  
+/* DESCRIPTION */
+
+.description{
+background:#f2f2f2;
+padding:14px;
+border-radius:12px;
+margin-top:10px;
+}
+
+.desc-meta{
+font-weight:600;
+margin-bottom:8px;
+}
+
+/* COMMENTS */
+
+.comments-header{
+display:flex;
+gap:18px;
+margin-top:24px;
+font-size:16px;
+}
+
+.sort{
+color:#606060;
+font-size:14px;
+}
+
+.add-comment{
+padding:14px 0;
+border-bottom:1px solid #e5e5e5;
+color:#606060;
+margin-bottom:18px;
+}
+
+.comment{
+display:flex;
+gap:12px;
+margin-bottom:22px;
+}
+
+.comment-avatar{
+width:36px;
+height:36px;
+background:#ddd;
+border-radius:50%;
+}
+
+.comment-user{
+font-weight:600;
+font-size:13px;
+}
+
+.comment-text{
+margin-top:4px;
+font-size:14px;
+}
+
+/* REPLIES */
+
+.reply-toggle{
+display:none;
+}
+
+.reply-label{
+display:inline-flex;
+align-items:center;
+gap:6px;
+font-size:14px;
+font-weight:500;
+cursor:pointer;
+margin:6px 0 10px 0;
+padding:6px 10px;
+border-radius:18px;
+}
+
+.reply-label:hover{
+background:#f2f2f2;
+}
+
+.reply-label svg{
+width:16px;
+height:16px;
+margin-left:4px;
+transition:transform 0.2s;
+}
+
+.reply-container{
+display:none;
+margin-top:8px;
+}
+
+.reply{
+display:flex;
+gap:10px;
+margin-bottom:14px;
+}
+
+.reply-avatar{
+width:28px;
+height:28px;
+background:#ddd;
+border-radius:50%;
+}
+
+.reply-user{
+font-weight:600;
+font-size:13px;
+}
+
+.reply-text{
+font-size:14px;
+margin-top:3px;
+}
+
+.more-replies{
+display:inline-flex;
+align-items:center;
+gap:6px;
+font-size:14px;
+font-weight:500;
+padding:6px 10px;
+border-radius:18px;
+margin-top:6px;
+}
+
+.more-replies:hover{
+background:#f2f2f2;
+}
+
+.more-replies svg{
+width:16px;
+height:16px;
+margin-left:4px;
+}
+
+/* reveal replies */
+
+.reply-toggle:checked + .reply-label svg{
+transform:rotate(180deg);
+}
+
+.reply-toggle:checked ~ .reply-container{
+display:block;
+}
+  
+/* SIDEBAR */
+
+.rec{
+display:flex;
+gap:10px;
+margin-bottom:12px;
+}
+
+.thumb{
+width:168px;
+height:94px;
+background:black;
+border-radius:8px;
+flex-shrink:0;
+}
+
+.rec-info{
+font-size:14px;
+}
+
+.rec-title{
+font-weight:600;
+}
+
+.rec-channel{
+font-size:13px;
+color:#606060;
+}
+
+.rec-meta{
+font-size:12px;
+color:#606060;
+}
+
+/* RESPONSIVE – hide sidebar on smaller screens */
+
+@media (max-width:1100px){
+
+.sidebar{
+display:none;
+}
+
+.main{
+max-width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+<div class="left-top">
+<div class="hamburger">☰</div>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg">
+</div>
+
+<div class="right-top">
+
+<div class="icon-btn">
+<svg viewBox="0 0 24 24">
+<path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 
+6.5 6.5 0 109.5 16a6.471 6.471 0 004.23-1.57l.27.28v.79L20 
+21.49 21.49 20l-5.99-6zM9.5 14A4.5 4.5 0 119.5 5a4.5 4.5 0 010 9z"/>
+</svg>
+</div>
+
+<div class="icon-btn">
+<svg viewBox="0 0 24 24">
+<circle cx="12" cy="5" r="2"/>
+<circle cx="12" cy="12" r="2"/>
+<circle cx="12" cy="19" r="2"/>
+</svg>
+</div>
+
+<div class="signin">
+<svg viewBox="0 0 24 24">
+<path d="M12 12c2.7 0 4.5-2 4.5-4.5S14.7 3 12 3 7.5 5 7.5 7.5 9.3 12 12 12zm0 2c-3 0-9 1.5-9 4.5V21h18v-2.5c0-3-6-4.5-9-4.5z"/>
+</svg>
+Sign in
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="page">
+
+<div class="main">
+
+<div class="video">
+
+<div class="controls">
+
+<div class="progress">
+<div class="progress-dot"></div>
+</div>
+
+<div class="control-row">
+
+<div class="controls-left">
+
+<div class="control-btn">
+<svg width="26" height="26" viewBox="0 0 24 24">
+<path fill="white" d="M8 5v14l11-7z"/>
+</svg>
+</div>
+<div class="control-btn">
+<svg width="26" height="26" viewBox="0 0 24 24">
+<path fill="white" d="M3 9v6h4l5 5V4L7 9H3z"/>
+</svg>
+</div>
+
+<div>0:00 / 48:55</div>
+
+</div>
+
+<div class="controls-right">
+
+<div class="control-btn">
+<svg width="24" height="24" viewBox="0 0 24 24">
+<path fill="white" d="M19.14,12.94a7.14,7.14,0,0,0,.05-.94,7.14,7.14,0,0,0-.05-.94l2.11-1.65a.5.5,0,0,0,.12-.65l-2-3.46a.5.5,0,0,0-.61-.22l-2.49,1a7.28,7.28,0,0,0-1.63-.94l-.38-2.65A.5.5,0,0,0,13.76,2H10.24a.5.5,0,0,0-.49.42L9.37,5.07a7.28,7.28,0,0,0-1.63.94l-2.49-1a.5.5,0,0,0-.61.22l-2,3.46a.5.5,0,0,0,.12.65L4.86,11.06a7.14,7.14,0,0,0-.05.94,7.14,7.14,0,0,0,.05.94L2.75,14.59a.5.5,0,0,0-.12.65l2,3.46a.5.5,0,0,0,.61.22l2.49-1a7.28,7.28,0,0,0,1.63.94l.38,2.65a.5.5,0,0,0,.49.42h3.52a.5.5,0,0,0,.49-.42l.38-2.65a7.28,7.28,0,0,0,1.63-.94l2.49,1a.5.5,0,0,0,.61-.22l2-3.46a.5.5,0,0,0-.12-.65ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
+</svg>
+</div>
+<div class="control-btn">
+<svg width="24" height="24" viewBox="0 0 24 24">
+<path fill="white" d="M7 7H10V5H5V10H7V7ZM14 5V7H17V10H19V5H14ZM17 17H14V19H19V14H17V17ZM7 14H5V19H10V17H7V14Z"/>
+</svg>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="video-title">
+The 'God of Entertainment' Serial Killer (Vincent Whittman)
+</div>
+
+<div class="channel-row">
+
+<div class="channel-left">
+
+<div class="channel-avatar"></div>
+
+<div class="channel-meta">
+<div class="channel-name">True Crime with Niamh Heath</div>
+<div class="sub-count">421K subscribers</div>
+</div>
+
+<div class="subscribe">Subscribe</div>
+
+</div>
+
+</div>
+
+<div class="actions">
+
+<div class="button like-box">
+
+<svg viewBox="0 0 24 24">
+<path d="M14 9V5a3 3 0 0 0-3-3l-1 7H4v11h11l5-8v-3z"></path>
+</svg>
+
+<span>12K</span>
+
+<div class="divider"></div>
+
+<svg viewBox="0 0 24 24">
+<path d="M10 15v4a3 3 0 0 0 3 3l1-7h6V4H9L4 12v3z"></path>
+</svg>
+
+</div>
+
+<div class="button">
+<svg viewBox="0 0 24 24">
+<path d="M15 8V5l7 7-7 7v-3c-4 0-7 1-9 3 
+1-5 4-9 9-9z"/>
+</svg>
+Share
+</div>
+
+<div class="button">
+<svg viewBox="0 0 24 24">
+<path d="M5 3h14v18l-7-4-7 4z"></path>
+</svg>
+Save
+</div>
+
+<div class="button icon">
+<svg viewBox="0 0 24 24">
+<circle cx="5" cy="12" r="2"/>
+<circle cx="12" cy="12" r="2"/>
+<circle cx="19" cy="12" r="2"/>
+</svg>
+</div>
+
+</div>
+
+<div class="description">
+
+<div class="desc-meta">
+725,449 views • Oct 17, 2023
+</div>
+
+Today's solved true crime case is on Vincent Whittman aka the God of Entertainment aka one of the scariest fucking men I've ever read about in my life.<br><br>
+Listen to my true crime episodes as a podcast:
+https://bit.ly/3ftkV15<br><br>
+
+Request a case: https://www.videoask.com/voxishot69
+
+<br><br>
+Thank you for watching!! As always, viewer discretion is advised.
+
+</div>
+
+<div class="comments-header">
+<div>4,821 Comments</div>
+<div class="sort">☰ Sort by</div>
+</div>
+
+<div class="add-comment">Add a comment...</div>
+
+<div class="comment">
+<div class="comment-avatar"></div>
+
+<div>
+
+<div class="comment-user">ariszle</div>
+<div class="comment-text">????.</div>
+
+<input type="checkbox" id="reply1" class="reply-toggle">
+
+<label for="reply1" class="reply-label">
+12 replies
+<svg viewBox="0 0 24 24">
+<polyline points="6,9 12,15 18,9"
+stroke="#0f0f0f"
+stroke-width="2.5"
+fill="none"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+</svg>
+</label>
+
+<div class="reply-container">
+
+<div class="reply">
+<div class="reply-avatar"></div>
+<div>
+<div class="reply-user">dead_air</div>
+<div class="reply-text">I swear I saw this broadcast once.</div>
+</div>
+</div>
+
+<div class="reply">
+<div class="reply-avatar"></div>
+<div>
+<div class="reply-user">AnalogSignal</div>
+<div class="reply-text">The ending still creeps me out.</div>
+</div>
+</div>
+
+<div class="reply">
+<div class="reply-avatar"></div>
+<div>
+<div class="reply-user">nightshiftviewer</div>
+<div class="reply-text">That last frame wasn't supposed to air.</div>
+</div>
+</div>
+
+<div class="more-replies">
+Show more replies
+<svg viewBox="0 0 24 24">
+<polyline points="6,9 12,15 18,9"
+stroke="#0f0f0f"
+stroke-width="2.5"
+fill="none"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+</svg>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="comment">
+<div class="comment-avatar"></div>
+<div>
+<div class="comment-user">AnOperaGhost</div>
+<div class="comment-text">?????.</div>
+</div>
+</div>
+
+<div class="comment">
+<div class="comment-avatar"></div>
+<div>
+<div class="comment-user">SpookyAlchemist3952</div>
+<div class="comment-text">???</div>
+</div>
+</div>
+
+</div>
+
+<div class="sidebar">
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">Weirdest Live TV Moments Ever Broadcast</div>
+<div class="rec-channel">RetroVision</div>
+<div class="rec-meta">1.2M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">Lost 1950s Television Recordings</div>
+<div class="rec-channel">Broadcast Archive</div>
+<div class="rec-meta">854K views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">The Dark History of Early Game Shows</div>
+<div class="rec-channel">MediaHistory</div>
+<div class="rec-meta">2.1M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">10 TV Broadcasts That Should Never Have Aired</div>
+<div class="rec-channel">TVVault</div>
+<div class="rec-meta">3.4M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">Unsolved Television Broadcast Mysteries</div>
+<div class="rec-channel">SignalLost</div>
+<div class="rec-meta">987K views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">Weirdest Live TV Moments Ever Broadcast</div>
+<div class="rec-channel">RetroVision</div>
+<div class="rec-meta">1.2M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">Lost 1950s Television Recordings</div>
+<div class="rec-channel">Broadcast Archive</div>
+<div class="rec-meta">854K views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">The Dark History of Early Game Shows</div>
+<div class="rec-channel">MediaHistory</div>
+<div class="rec-meta">2.1M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">10 TV Broadcasts That Should Never Have Aired</div>
+<div class="rec-channel">TVVault</div>
+<div class="rec-meta">3.4M views</div>
+</div>
+</div>
+
+<div class="rec">
+<div class="thumb"></div>
+<div class="rec-info">
+<div class="rec-title">Unsolved Television Broadcast Mysteries</div>
+<div class="rec-channel">SignalLost</div>
+<div class="rec-meta">987K views</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
