@@ -25,6 +25,10 @@ padding:10px 16px;
 gap:16px;
 }
 
+.logo{
+height:32px;
+}
+
 .hamburger{
 width:22px;
 cursor:pointer;
@@ -37,17 +41,33 @@ margin:4px 0;
 border-radius:2px;
 }
 
-.logo{
-height:32px;
-}
-
 .search{
 flex:1;
 background:white;
 color:#333;
-padding:10px;
+padding:10px 14px;
 border-radius:6px;
 font-size:14px;
+}
+
+.header-right{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.watchlist{
+display:flex;
+align-items:center;
+gap:6px;
+font-size:14px;
+cursor:pointer;
+}
+
+.watchlist svg{
+width:18px;
+height:18px;
+fill:white;
 }
 
 .signin{
@@ -122,18 +142,44 @@ margin:40px auto;
 padding:0 40px;
 }
 
-.section-title{
-font-size:22px;
-font-weight:bold;
-margin-bottom:16px;
+/* SECTION HEADERS */
+
+.section-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:18px;
 }
 
-/* CAST */
+.section-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
 
-.cast-list{
-font-size:15px;
-line-height:1.9;
-color:#ddd;
+.yellow-line{
+width:4px;
+height:24px;
+background:#f5c518;
+border-radius:2px;
+}
+
+.section-title{
+font-size:24px;
+font-weight:700;
+}
+
+.section-right{
+display:flex;
+align-items:center;
+gap:8px;
+color:#bbb;
+font-size:18px;
+}
+
+.arrow{
+font-size:24px;
+color:white;
 }
 
 /* STORYLINE */
@@ -143,6 +189,41 @@ font-size:16px;
 line-height:1.7;
 color:#ddd;
 max-width:800px;
+}
+
+/* CAST */
+
+.cast-row{
+display:flex;
+gap:34px;
+overflow-x:auto;
+padding-bottom:10px;
+}
+
+.cast-member{
+width:120px;
+flex-shrink:0;
+text-align:center;
+}
+
+.cast-photo{
+width:72px;
+height:72px;
+background:#3a3a3a;
+border-radius:50%;
+margin:0 auto 12px auto;
+}
+
+.actor-name{
+font-size:14px;
+font-weight:600;
+margin-bottom:4px;
+}
+
+.character-name{
+font-size:13px;
+color:#bbb;
+line-height:1.4;
 }
 
 /* REVIEWS */
@@ -169,6 +250,66 @@ margin-bottom:10px;
 font-size:14px;
 line-height:1.5;
 color:#ddd;
+}
+
+/* DID YOU KNOW */
+
+.didyouknow-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:18px;
+}
+
+.fact-box{
+background:#1a1a1a;
+padding:18px;
+border-radius:8px;
+}
+
+.fact-title{
+font-size:18px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.fact-text{
+font-size:14px;
+line-height:1.6;
+color:#ddd;
+}
+
+/* TOP PICKS */
+
+.top-picks{
+display:flex;
+gap:20px;
+overflow-x:auto;
+}
+
+.pick{
+width:180px;
+background:#1a1a1a;
+border-radius:8px;
+padding:14px;
+flex-shrink:0;
+}
+
+.pick-thumb{
+height:100px;
+background:#303030;
+border-radius:6px;
+margin-bottom:12px;
+}
+
+.pick-title{
+font-size:14px;
+font-weight:600;
+margin-bottom:6px;
+}
+
+.pick-meta{
+font-size:13px;
+color:#bbb;
 }
 
 /* FOOTER */
@@ -204,20 +345,31 @@ text-decoration:underline;
 
 <div class="header">
 
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg">
+
 <div class="hamburger">
 <div></div>
 <div></div>
 <div></div>
 </div>
 
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg">
-
 <div class="search">
 Search IMDb
 </div>
 
+<div class="header-right">
+
+<div class="watchlist">
+<svg viewBox="0 0 24 24">
+<path d="M6 4c-1.1 0-2 .9-2 2v14l8-3.5L20 20V6c0-1.1-.9-2-2-2H6z"/>
+</svg>
+Watchlist
+</div>
+
 <div class="signin">
 Sign In
+</div>
+
 </div>
 
 </div>
@@ -265,8 +417,17 @@ corporate politics ultimately destroyed his career.
 
 <div class="section">
 
-<div class="section-title">
-Storyline
+<div class="section-header">
+
+<div class="section-left">
+<div class="yellow-line"></div>
+<div class="section-title">Storyline</div>
+</div>
+
+<div class="section-right">
+<div class="arrow">›</div>
+</div>
+
 </div>
 
 <div class="storyline">
@@ -291,32 +452,76 @@ weight of scandal and industry politics.
 
 </div>
 
-<!-- CAST -->
+<!-- TOP CAST -->
 
 <div class="section">
 
-<div class="section-title">
-Top cast
+<div class="section-header">
+
+<div class="section-left">
+<div class="yellow-line"></div>
+<div class="section-title">Top cast</div>
 </div>
 
-<div class="cast-list">
-
-Andrew Calloway — Vincent Whittman<br>
-Nathan Briggs — Robert Sinclair<br>
-Lila Moreno — Helen Archer<br>
-Thomas Rourke — Studio Executive Harold Bell<br>
-Daniel Hayes — Detective Frank Mallory<br>
-
+<div class="section-right">
+<div>15</div>
+<div class="arrow">›</div>
 </div>
 
 </div>
 
-<!-- REVIEWS -->
+<div class="cast-row">
+
+<div class="cast-member">
+<div class="cast-photo"></div>
+<div class="actor-name">Andrew Calloway</div>
+<div class="character-name">Vincent Whittman</div>
+</div>
+
+<div class="cast-member">
+<div class="cast-photo"></div>
+<div class="actor-name">Nathan Briggs</div>
+<div class="character-name">Robert Sinclair</div>
+</div>
+
+<div class="cast-member">
+<div class="cast-photo"></div>
+<div class="actor-name">Lila Moreno</div>
+<div class="character-name">Helen Archer</div>
+</div>
+
+<div class="cast-member">
+<div class="cast-photo"></div>
+<div class="actor-name">Thomas Rourke</div>
+<div class="character-name">Harold Bell</div>
+</div>
+
+<div class="cast-member">
+<div class="cast-photo"></div>
+<div class="actor-name">Daniel Hayes</div>
+<div class="character-name">Frank Mallory</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- USER REVIEWS -->
 
 <div class="section">
 
-<div class="section-title">
-User reviews
+<div class="section-header">
+
+<div class="section-left">
+<div class="yellow-line"></div>
+<div class="section-title">User reviews</div>
+</div>
+
+<div class="section-right">
+<div>349</div>
+<div class="arrow">›</div>
+</div>
+
 </div>
 
 <div class="review">
@@ -353,6 +558,100 @@ User rating: 2/10
 The real Vincent Whittman had a reputation for cruelty and manipulation.
 This film instead suggests he was framed by studio politics. It’s beautifully
 shot but completely misunderstands the historical figure it claims to depict.
+</div>
+
+</div>
+
+</div>
+
+<!-- DID YOU KNOW -->
+
+<div class="section">
+
+<div class="section-header">
+
+<div class="section-left">
+<div class="yellow-line"></div>
+<div class="section-title">Did you know</div>
+</div>
+
+<div class="section-right">
+<div class="arrow">›</div>
+</div>
+
+</div>
+
+<div class="didyouknow-grid">
+
+<div class="fact-box">
+<div class="fact-title">Trivia</div>
+<div class="fact-text">
+Director Kyle Davenport claimed in interviews that the film was intended
+to “humanize” Vincent Whittman, which became heavily criticized after release.
+</div>
+</div>
+
+<div class="fact-box">
+<div class="fact-title">Goofs</div>
+<div class="fact-text">
+Several scenes feature widescreen television monitors despite the movie
+being set in the early 1950s before such displays existed.
+</div>
+</div>
+
+<div class="fact-box">
+<div class="fact-title">Quotes</div>
+<div class="fact-text">
+“You don't become the king of television by asking permission.”
+— Vincent Whittman
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- TOP PICKS -->
+
+<div class="section">
+
+<div class="section-header">
+
+<div class="section-left">
+<div class="yellow-line"></div>
+<div class="section-title">Top picks</div>
+</div>
+
+<div class="section-right">
+<div class="arrow">›</div>
+</div>
+
+</div>
+
+<div class="top-picks">
+
+<div class="pick">
+<div class="pick-thumb"></div>
+<div class="pick-title">The Broadcast King</div>
+<div class="pick-meta">Crime · Drama</div>
+</div>
+
+<div class="pick">
+<div class="pick-thumb"></div>
+<div class="pick-title">Studio Nights</div>
+<div class="pick-meta">Thriller</div>
+</div>
+
+<div class="pick">
+<div class="pick-thumb"></div>
+<div class="pick-title">Signal Seven</div>
+<div class="pick-meta">Mystery</div>
+</div>
+
+<div class="pick">
+<div class="pick-thumb"></div>
+<div class="pick-title">Late Night America</div>
+<div class="pick-meta">Biography</div>
 </div>
 
 </div>
